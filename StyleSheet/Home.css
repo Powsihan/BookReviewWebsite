@@ -14,7 +14,7 @@
     }
     
     .icoon {
-        padding: 3px;
+        padding: 7px;
     }
     
     .nav-link {
@@ -71,5 +71,43 @@
     
     .logog:hover {
         transform: scale(1.1);
-        transition: 500ms ease-in-out;
+        transition: 200ms ease-in-out;
     }
+    /* ----------------------------------------------------------------- */
+    /* login button */
+    
+    .button-87 {
+        padding: 10px 20px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        border-radius: 10px;
+        display: block;
+        border: 0px;
+        font-weight: 700;
+        box-shadow: 0px 0px 14px -7px #3b3b3b;
+        background-image: linear-gradient(45deg, #515152 0%, #161615 51%, #383737 100%);
+        cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
+        touch-action: manipulation;
+    }
+    
+    .button-87:hover {
+        background-position: right center;
+        /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .button-87:active {
+        transform: scale(0.95);
+    }
+    
+    .w-200 {
+        width: 250px;
+        height: 50px;
+    }
+    /* ----------------------------------------------------------------- */

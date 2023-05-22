@@ -23,6 +23,7 @@
           "height: fit-content"
         ]
       }
-    ]
+    ],
+    "button-type": "off"
   }
 }

@@ -10,6 +10,14 @@
         bottom: 0;
         z-index: -1;
     }
+    
+    input::-webkit-input-placeholder {
+        color: rgb(255, 255, 255);
+    }
+    
+    input:-moz-placeholder {
+        color: rgb(255, 255, 255);
+    }
     /* ----------------------------------------------------------------- */
     /* ========================================================================================================================== */
     /* navigation bar css */
@@ -290,6 +298,12 @@
         float: left;
     }
     
+    .counts .content .count-box i:hover {
+        color: #ffae00;
+        transform: scale(1.1);
+        transition: 200ms ease-in-out;
+    }
+    
     .counts .content .count-box span {
         font-size: 36px;
         line-height: 30px;
@@ -297,6 +311,10 @@
         font-weight: 700;
         color: #ffffff;
         margin-left: 50px;
+    }
+    
+    .exper {
+        color: #ffae00;
     }
     
     .counts .content .count-box p {
@@ -322,9 +340,10 @@
     }
     
     .counts .image {
-        background: url("../img/counts-img.jpg") center center no-repeat;
+        background: url("/images/books.jpg") center center no-repeat;
         background-size: cover;
         min-height: 400px;
+        border-radius: 4px;
     }
     
     @media (max-width: 991px) {

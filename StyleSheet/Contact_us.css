@@ -186,10 +186,13 @@
         width: 100%;
     }
     
+    .contact .info .infoicon {
+        padding: 5px;
+    }
+    
     .contact .info i {
-        font-size: 20px;
         background: none;
-        color: #ffffff;
+        color: rgba(255, 255, 255, 0.70);
         float: left;
         width: 44px;
         height: 44px;
@@ -200,19 +203,23 @@
         transition: all 0.3s ease-in-out;
     }
     
+    .contact .info i:hover {
+        color: #39b0ff;
+    }
+    
     .contact .info h4 {
         padding: 0 0 0 60px;
         font-size: 22px;
         font-weight: 600;
         margin-bottom: 5px;
-        color: #151515;
+        color: #ffffff;
     }
     
     .contact .info p {
         padding: 0 0 0 60px;
         margin-bottom: 0;
         font-size: 14px;
-        color: #484848;
+        color: #b4b1b1;
     }
     
     .contact .info .email,
@@ -231,9 +238,10 @@
     
     .contact .php-email-form .error-message {
         display: none;
-        color: #090b13;
-        background: #ed3c0d;
+        color: #ffffff;
+        background: #090b13;
         text-align: left;
+        border-radius: 5px;
         padding: 15px;
         font-weight: 600;
     }

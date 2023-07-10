@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="../StyleSheet/Categories.css">
     <!-- ----------------------------------------------------------------- -->
     <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
     <!-- <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script> -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -36,48 +35,45 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-color navvr fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand logog" href="Home.html"><img src="/images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
+            <a class="navbar-brand logog" href="../Pages/Home.php"><img src="/images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Home.html"><i
-                            class="fa-solid fa-house  icoon"></i>Home</a>
+                        <a class="nav-link active" aria-current="page" href="../Pages/Home.php"><i class="fa-solid fa-house  icoon"></i>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="About_us.html"><i class="fa-solid fa-hands-bound icoon"></i>About Us</a>
+                        <a class="nav-link active" href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon"></i>About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fa-solid fa-book icoon"></i>Categories</a>
+                        <a class="nav-link active" href="../Pages/Categories.php"><i class="fa-solid fa-book icoon"></i>Categories</a>
                     </li>
                     <!-- <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-rectangle-history-circle-plus"></i>
-              Categories
-            </a>
-                    <ul class="dropdown-menu bg-color ">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li> -->
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-rectangle-history-circle-plus"></i>
+                  Categories
+                </a>
+                        <ul class="dropdown-menu bg-color ">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li> -->
                     <li class="nav-item ">
-                        <a class="nav-link active " href="Contact_us.html"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
+                        <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                     </li>
                 </ul>
                 <form class="d-flex ms-auto" role="search">
                     <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
-                    <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i
-                        class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
+                    <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-but">
-                        <a class="btn btn-outline-dark glow-button button-87 " href="#"><i
-                            class="fa-solid fa-user icoon"></i>Login</a>
+                        <a class="btn btn-outline-dark glow-button button-87 " href="../Pages/login.php"><i class="fa-solid fa-user icoon"></i>Login</a>
                     </li>
                 </ul>
             </div>
@@ -132,7 +128,7 @@
                                                     <p class="card-text">ISBN: 1234567890</p>
                                                     <p class="card-text">Publication Date: 01.01.2023</p>
                                                     <div class="revbtn">
-                                                        <a href="Review.html" class="btn btn-primary">Review</a>
+                                                        <a href="../Pages/Review.php" class="btn btn-primary">Review</a>
                                                         <a href="#" class="btn btn-primary">Buy</a>
                                                     </div>
                                                 </div>
@@ -1645,14 +1641,13 @@
                 <h4>Newsletter</h4>
                 <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
                 <p>
-                    <div class="input-group ">
-                        <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
-                        <span class="input-group-btn ">
-                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i
-                                class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
+                <div class="input-group ">
+                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
+                    <span class="input-group-btn ">
+                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
                     </span>
-                    </div>
-                    <!-- /input-group -->
+                </div>
+                <!-- /input-group -->
                 </p>
             </div>
         </div>

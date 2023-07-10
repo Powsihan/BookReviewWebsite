@@ -1,294 +1,313 @@
+/* ========================================================================================================================== */
+
+
+/* body css */
+
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: url("../images/login-background.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.wrapper {
-  position: relative;
-  width: 400px;
-  height: 440px;
-  margin-top: 8rem;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-.wrapper .form-box {
-  width: 100%;
-  padding: 40px;
-}
-.wrapper .icon-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 45px;
-  height: 45px;
-  background: #162938;
-  font-size: 2em;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 20px;
-  cursor: pointer;
-  z-index: 1;
-}
-.form-box h2 {
-  position: absolute;
-  top: 5%;
-
-  font-size: 2em;
-  color: #ffffff;
-  text-align: center;
-}
-.input-box {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  border-bottom: 2px solid #162938;
-  margin: 30px 0;
-}
-.input-box lable {
-  position: absolute;
-  top: 50%;
-  left: -300px;
-
-  transform: translateY(-50%);
-  font-size: lem;
-  color: white;
-  font-weight: 500;
-  pointer-events: none;
-  transition: 0.5s;
-}
-.input-box input:focus ~ lable,
-.input-box input:vlaid ~ lable {
-  top: -5px;
+    background: url("/images/home-background.png") center center / cover no-repeat fixed;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
-.input-box input {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: lem;
-  color: white;
-  font-weight: 600;
-  padding: 0 35px 0 5px;
+input::-webkit-input-placeholder {
+    color: rgb(255, 255, 255);
 }
-.input-box .icon {
-  position: absolute;
-  right: 8px;
-  font-size: 1.2em;
-  color: blue;
-  line-height: 57px;
+
+input:-moz-placeholder {
+    color: rgb(255, 255, 255);
 }
-.remember-forgot {
-  font-size: 0.9em;
-  color: blue;
-  font-weight: 500;
-  margin: -15px 0 15px;
-  display: flex;
-  justify-content: space-between;
+
+
+/* ----------------------------------------------------------------- */
+
+
+/* ========================================================================================================================== */
+
+
+/* navigation bar css */
+
+.navbar .navbar-nav .nav-item a {
+    padding: 15px;
 }
-.remember-forgot label input {
-  accent-color: blue;
-  margin-right: 3px;
+
+.navbar .navbar-nav .nav-but {
+    padding: 10px;
 }
-.remember-forgot a {
-  color: blue;
-  text-decoration: none;
+
+.bg-color {
+    background-color: #090b13 !important;
+    color: white !important;
 }
-.remember-forgot a:hover {
-  text-decoration: underline;
+
+.icoon {
+    padding: 7px;
 }
-.btn {
-  width: 100%;
-  height: 45px;
-  background: #162938;
-  border: none;
-  outline: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: lem;
-  color: #fff;
-  font-weight: 500;
+
+.nav-link {
+    position: relative;
 }
-.login-register {
-  font-size: 0.9em;
-  color: #162938;
-  text-align: center;
-  font-weight: 500;
-  margin: 25px 0 10px;
+
+.nav-link::after {
+    content: '';
+    opacity: 0;
+    transition: all 300ms;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(46, 255, 245);
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
-.login-register p a {
-  color: blue;
-  text-decoration: none;
-  font-weight: 600;
+
+.nav-link:hover::after {
+    opacity: 1;
 }
-.login-register p a:hover {
-  text-decoration: underline;
+
+
+/* ----------------------------------------------------------------- */
+
+
+/* search bar */
+
+input[type="text"].form-control.bg-dark {
+    border-color: #343a40;
+    color: #fff;
 }
+
+.glowing-border {
+    border: 2px solid #343a40;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px #343a40;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.glowing-border:focus {
+    outline: none;
+    box-shadow: 0 0 20px #343a40;
+}
+
+.btn-outline-secondary.text-white {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-secondary.text-white:hover {
+    background-color: #fff;
+    color: #ffffff;
+}
+
+
+/* ----------------------------------------------------------------- */
+
+
+/* logo */
+
+.logog:hover {
+    transform: scale(1.1);
+    transition: 200ms ease-in-out;
+}
+
+
+/* ----------------------------------------------------------------- */
+
+
+/* login button */
+
+.button-87 {
+    padding: 10px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #3b3b3b;
+    background-image: linear-gradient(45deg, #515152 0%, #161615 51%, #383737 100%);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.button-87:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.button-87:active {
+    transform: scale(0.95);
+}
+
+.siz {
+    width: 250px;
+    height: 50px;
+}
+
+
+/* ----------------------------------------------------------------- */
+
+
+/* ========================================================================================================================== */
+
 
 /* ========================================================================================================================== */
 
 .footer-back {
-  background-color: #090b13 !important;
+    background-color: #090b13 !important;
 }
 
 .footer-bs {
-  background-color: #090b13;
-  padding: 60px 40px;
-  color: rgba(255, 255, 255, 1);
-  margin-bottom: 20px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 6px;
-  height: fit-content;
-  bottom: 0;
-  left: 0;
+    background-color: #090b13;
+    padding: 60px 40px;
+    color: rgba(255, 255, 255, 1.00);
+    margin-bottom: 20px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 6px;
+    height: fit-content;
 }
 
 .footer-bs .footer-brand,
 .footer-bs .footer-nav,
 .footer-bs .footer-social,
 .footer-bs .footer-ns {
-  padding: 10px 25px;
+    padding: 10px 25px;
 }
 
 .footer-bs .footer-nav,
 .footer-bs .footer-social,
 .footer-bs .footer-ns {
-  border-color: transparent;
+    border-color: transparent;
 }
 
 .footer-bs .footer-brand img {
-  margin-left: 70px;
+    margin-left: 70px;
 }
 
 .footer-bs .footer-brand img:hover {
-  transform: scale(1.1);
-  transition: all 250ms ease-in-out;
-  cursor: pointer;
+    transform: scale(1.1);
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
 }
 
 .footer-bs .footer-brand h2 {
-  margin: 0px 0px 10px;
+    margin: 0px 0px 10px;
 }
 
 .footer-bs .footer-brand p {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 20px;
-  text-align: justify;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.70);
+    margin-top: 20px;
+    text-align: justify;
 }
 
 .footer-bs .footer-nav ul.pages {
-  list-style: none;
-  padding: 0px;
+    list-style: none;
+    padding: 0px;
 }
 
 .footer-bs .footer-nav ul.pages li {
-  padding: 5px 0px;
+    padding: 5px 0px;
 }
 
 .footer-bs .footer-nav ul.pages a {
-  color: rgba(255, 255, 255, 1);
-  font-weight: bold;
-  text-transform: uppercase;
+    color: rgba(255, 255, 255, 1.00);
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .footer-bs .footer-nav ul.pages a:hover {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
+    color: rgba(255, 255, 255, 0.80);
+    text-decoration: none;
 }
 
 .footer-bs .footer-nav h4 {
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
 .footer-bs .footer-nav ul.list {
-  list-style: none;
-  padding: 0px;
+    list-style: none;
+    padding: 0px;
 }
 
 .footer-bs .footer-nav ul.list li {
-  padding: 5px 0px;
+    padding: 5px 0px;
 }
 
 .footer-bs .footer-nav ul.list a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
+    color: rgba(255, 255, 255, 0.80);
+    text-decoration: none;
 }
 
 .footer-bs .footer-nav ul.list a:hover {
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: underline;
+    color: rgba(255, 255, 255, 0.60);
+    text-decoration: underline;
 }
 
 .footer-bs .footer-social ul {
-  list-style: none;
-  padding: 0px;
+    list-style: none;
+    padding: 0px;
 }
 
 .footer-bs .footer-social h4 {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  padding-left: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-left: 5px;
 }
 
 .footer-bs .footer-social li {
-  padding: 15px 10px;
+    padding: 15px 10px;
 }
 
 .footer-bs .footer-social a {
-  color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1.00);
 }
 
 .footer-bs .footer-social a:hover {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
+    color: rgba(255, 255, 255, 0.80);
+    text-decoration: none;
 }
 
 .footer-bs .footer-ns h4 {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
 .footer-bs .footer-ns p {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.70);
 }
 
 .socialicon:hover {
-  transform: scale(1.1);
-  transition: all 250ms ease-in-out;
+    transform: scale(1.1);
+    transition: all 250ms ease-in-out;
 }
 
 .siz {
-  font-size: 0.75em;
+    font-size: 0.75em;
 }
 
 @media (min-width: 768px) {
-  .footer-bs .footer-nav,
-  .footer-bs .footer-social,
-  .footer-bs .footer-ns {
-    border-left: solid 1px rgba(255, 255, 255, 0.1);
-  }
+    .footer-bs .footer-nav,
+    .footer-bs .footer-social,
+    .footer-bs .footer-ns {
+        border-left: solid 1px rgba(255, 255, 255, 0.10);
+    }
 }

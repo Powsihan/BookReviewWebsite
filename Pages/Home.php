@@ -7,46 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
     <!-- CSS stylesheet -->
-    <link rel="stylesheet" href="../StyleSheet/Review.css">
-    <!-- ------------------------------------------------------------------->
+    <link rel="stylesheet" href="../StyleSheet/Home.css">
+    <!-- ----------------------------------------------------------------- -->
     <!-- font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <title>Review | ReadO</title>
+    <!-- Title -->
+    <title>Home|ReadO</title>
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 </head>
 
 <body>
-    <script src="/JS File/About_us.js"></script>
     <!-- bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
     <!-- bootstrap link  end -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-color navvr fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand logog" href="Home.html"><img src="/images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
+            <a class="navbar-brand logog" href="../Pages/Home.php"><img src="/images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Home.html"><i
+                        <a class="nav-link active" aria-current="page" href="../Pages/Home.php"><i
                                 class="fa-solid fa-house  icoon"></i>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="About_us.html"><i
-                                class="fa-solid fa-hands-bound icoon"></i>About Us</a>
+                        <a class="nav-link active" href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon"></i>About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="Categories.html"><i class="fa-solid fa-book icoon"></i>Categories</a>
+                        <a class="nav-link active" href="../Pages/Categories.php"><i class="fa-solid fa-book icoon"></i>Categories</a>
                     </li>
                     <!-- <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-rectangle-history-circle-plus"></i>
@@ -62,17 +60,17 @@
                         </ul>
                     </li> -->
                     <li class="nav-item ">
-                        <a class="nav-link active " href="Contact_us.html"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
+                        <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                     </li>
                 </ul>
                 <form class="d-flex ms-auto" role="search">
-                    <input class=" form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
+                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
                     <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i
                             class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-but">
-                        <a class="btn btn-outline-dark glow-button button-87 " href="#"><i
+                        <a class="btn btn-outline-dark glow-button button-87 " href="../Pages/login.php"><i
                                 class="fa-solid fa-user icoon"></i>Login</a>
                     </li>
                 </ul>
@@ -81,57 +79,135 @@
     </nav>
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
+    <!-- Slider -->
 
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+        </ol>
 
+        <!-- Wrapper for slides -->
+        <div class="slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/ReadO-slider.png" alt="Image 1" style="height:355px" width="1440px">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
 
-
-    <!--Experinece Section -->
-    <section id="counts" class="counts">
-        <div class="container text-light" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Adventure</h2>
-                <p>THE DARK</p>
-            </div>
-
-            <div class="row no-gutters">
-                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"><img src="../images/image-1.webp" alt=""></div>
-                <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
-                    <div class="content d-flex flex-column justify-content-center review">
-                        <h3>The dark adeleNood</h3>
-                        <h5>Details : </h5>
-                        <p class="card-text">ISBN : 1234567890</p>
-                        <p class="card-text">Publication Date : 01.01.2023</p>
-                        <p class="card-text">Author : John McGahern</p>
-                        <div class="star-rating">
-                            <h5>Rating : </h5>
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                        </div>
-                        <h5>Standard Review : </h5>
-                        <p>
-                            The Dark, widely acclaimed, yet infamously banned, is John McGahern’s sensitive, perceptive, and beautifully written portrayal of a young man’s coming-of-age in rural Ireland. Imaginative and introverted, the boy is successful in school, but bitterly
-                            confused by the guilt-inducing questions he endures from the priests who should be his venerated guides. His relationship with his bullying, bigoted, widowed father is similarly conflicted — touched with both deep love and
-                            carefully suppressed hatred. When he must leave home to further his education, their relationship is drawn to an emotional climax that teaches both father and son some of the most intricate truths about manhood.
-                        </p>
-                        <div class="revbtn">
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
+                <div class="carousel-item">
+                    <img src="/images/adventure-book-chronicles-slider.png" alt="Image 2" style="height:355px" width="1440px">
+                    <div class="carousel-caption">
 
                     </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/harrpotter-slider.png" alt="Image 3" style="height: 355px" width="1440px">
+                    <div class="carousel-caption">
 
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/images/Reado-slider2.png" alt="Image 4" style="height: 355px" width="1440px">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Left and right controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <script>
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval: 3000 // Change image every 3 seconds
+            });
+        });
+    </script>
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- Viewers Card -->
+    <!--1st row-->
+    <div class="container contgap ">
+        <div class="row cardcontainer">
+            <div class="col">
+                <div class="card cardWrap ">
+                    <img src="/images/view-1.png" class="card-img-top" alt="Image 1">
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card cardWrap ">
+                    <img src="/images/view-2.png" class=" card-img-top " alt="Image 2 ">
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card cardWrap ">
+                    <img src="/images/view-3.png" class=" card-img-top " alt="Image 3 ">
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card cardWrap ">
+                    <img src="/images/view-4.png " class="card-img-top " alt="Image 4 ">
 
                 </div>
             </div>
 
         </div>
-    </section>
-    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </div>
 
+    <!--2nd row-->
+    <div class="container contgap ">
+        <div class="row cardcontainer">
+            <div class="col">
+                <div class="card cardWrap ">
+                    <img src="/images/view-5.png" class="card-img-top" alt="Image 1">
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card cardWrap ">
+                    <img src="/images/view-7.png" class=" card-img-top " alt="Image 2 ">
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card cardWrap ">
+                    <img src="/images/view-8.png" class=" card-img-top " alt="Image 3 ">
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card cardWrap ">
+                    <img src="/images/view-9.png " class="card-img-top " alt="Image 4 ">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
     <!----------- Footer ------------>
@@ -187,7 +263,13 @@
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-    <script src="/JS File/About_us.js"></script>
+
+
+
+
+
+
+
 
 
 

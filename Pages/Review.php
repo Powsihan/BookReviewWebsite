@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="../StyleSheet/Review.css">
     <!-- ------------------------------------------------------------------->
     <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <title>Review | ReadO</title>
@@ -38,8 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../Pages/Home.php"><i
-                                class="fa-solid fa-house  icoon"></i>Home</a>
+                        <a class="nav-link active" aria-current="page" href="../Pages/Home.php"><i class="fa-solid fa-house  icoon"></i>Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon"></i>About Us</a>
@@ -66,13 +64,11 @@
                 </ul>
                 <form class="d-flex ms-auto" role="search">
                     <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
-                    <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i
-                            class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
+                    <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-but">
-                        <a class="btn btn-outline-dark glow-button button-87 " href="../Pages/login.php"><i
-                                class="fa-solid fa-user icoon"></i>Login</a>
+                        <a class="btn btn-outline-dark glow-button button-87 " href="../Pages/login.php"><i class="fa-solid fa-user icoon"></i>Login</a>
                     </li>
                 </ul>
             </div>
@@ -92,8 +88,8 @@
                 <p>THE DARK</p>
             </div>
 
-            <div class="row no-gutters">
-                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"><img src="../images/image-1.webp" alt=""></div>
+            <div class="row no-gutters ">
+                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start " data-aos="fade-right" data-aos-delay="100"><img src="../images/image-1.webp" alt=""></div>
                 <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
                     <div class="content d-flex flex-column justify-content-center review">
                         <h3>The dark adeleNood</h3>
@@ -112,11 +108,14 @@
                             </ul>
                         </div>
                         <h5>Standard Review : </h5>
+
                         <p>
                             The Dark, widely acclaimed, yet infamously banned, is John McGahern’s sensitive, perceptive, and beautifully written portrayal of a young man’s coming-of-age in rural Ireland. Imaginative and introverted, the boy is successful in school, but bitterly
                             confused by the guilt-inducing questions he endures from the priests who should be his venerated guides. His relationship with his bullying, bigoted, widowed father is similarly conflicted — touched with both deep love and
                             carefully suppressed hatred. When he must leave home to further his education, their relationship is drawn to an emotional climax that teaches both father and son some of the most intricate truths about manhood.
                         </p>
+
+
                         <div class="revbtn">
                             <a href="#" class="btn btn-primary">Buy</a>
                         </div>
@@ -146,10 +145,10 @@
 
                 <div class="col-md-6 ">
                     <ul class="list ">
-                        <li><a href="Home.html"><i class="fa-solid fa-house icoon "></i>Home</a></li>
-                        <li><a href="About_us.html"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
-                        <li><a href="Categories.html"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
-                        <li><a href="Contact_us.html"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
+                        <li><a href="../Pages/Home.php"><i class="fa-solid fa-house icoon "></i>Home</a></li>
+                        <li><a href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
+                        <li><a href="../Pages/Categories.php"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
+                        <li><a href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
                         <li><a href="# "><i class="fa-solid fa-chalkboard-user icoon "></i>Terms & Condition</a></li>
                         <li><a href="# "><i class="fa-solid fa-lock icoon "></i>Privacy Policy</a></li>
                     </ul>
@@ -169,20 +168,21 @@
                 <h4>Newsletter</h4>
                 <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
                 <p>
-                    <div class="input-group ">
-                        <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
-                        <span class="input-group-btn ">
-                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i
-                                class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
+                <div class="input-group ">
+                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
+                    <span class="input-group-btn ">
+                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
                     </span>
-                    </div>
-                    <!-- /input-group -->
+                </div>
+                <!-- /input-group -->
                 </p>
             </div>
         </div>
         <hr>
         <span class="align-items-center justify-content-center d-flex ">© 2007 ReadO, All rights reserved</span>
     </footer>
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 

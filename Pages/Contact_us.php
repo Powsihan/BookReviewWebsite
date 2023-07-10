@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="../StyleSheet/Contact_us.css">
     <!-- ------------------------------------------------------------------->
     <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <title>Contact_us | ReadO</title>
 </head>
@@ -36,8 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../Pages/Home.php"><i
-                                class="fa-solid fa-house  icoon"></i>Home</a>
+                        <a class="nav-link active" aria-current="page" href="../Pages/Home.php"><i class="fa-solid fa-house  icoon"></i>Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon"></i>About Us</a>
@@ -64,13 +62,11 @@
                 </ul>
                 <form class="d-flex ms-auto" role="search">
                     <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
-                    <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i
-                            class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
+                    <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-but">
-                        <a class="btn btn-outline-dark glow-button button-87 " href="../Pages/login.php"><i
-                                class="fa-solid fa-user icoon"></i>Login</a>
+                        <a class="btn btn-outline-dark glow-button button-87 " href="../Pages/login.php"><i class="fa-solid fa-user icoon"></i>Login</a>
                     </li>
                 </ul>
             </div>
@@ -90,8 +86,7 @@
             </div>
 
             <div>
-                <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                    frameborder="0" allowfullscreen></iframe>
+                <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="row mt-5">
@@ -157,8 +152,7 @@
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
-                        <div class="text-center"><button class="btn btn-outline-dark glow-button button-87" type="submit">Send Message<i
-                            class="fa-solid fa-envelope fa-xl icoon "></i></button></div>
+                        <div class="text-center"><button class="btn btn-outline-dark glow-button button-87" type="submit">Send Message<i class="fa-solid fa-envelope fa-xl icoon "></i></button></div>
                         <!-- <a class="btn btn-outline-dark glow-button buutt " href="#">Send Message <i
                             class="fa-solid fa-envelope icoon"></i></a> -->
                     </form>
@@ -184,10 +178,10 @@
 
                 <div class="col-md-6 ">
                     <ul class="list ">
-                        <li><a href="Home.html"><i class="fa-solid fa-house icoon "></i>Home</a></li>
-                        <li><a href="About_us.html"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
-                        <li><a href="Categories.html"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
-                        <li><a href="Contact_us.html"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
+                        <li><a href="../Pages/Home.php"><i class="fa-solid fa-house icoon "></i>Home</a></li>
+                        <li><a href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
+                        <li><a href="../Pages/Categories.php"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
+                        <li><a href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
                         <li><a href="# "><i class="fa-solid fa-chalkboard-user icoon "></i>Terms & Condition</a></li>
                         <li><a href="# "><i class="fa-solid fa-lock icoon "></i>Privacy Policy</a></li>
                     </ul>
@@ -207,14 +201,13 @@
                 <h4>Newsletter</h4>
                 <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
                 <p>
-                    <div class="input-group ">
-                        <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
-                        <span class="input-group-btn ">
-                        <button class="btn btn-outline-dark glow-button button-87 " type="submit"><i
-                                class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
+                <div class="input-group ">
+                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
+                    <span class="input-group-btn ">
+                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
                     </span>
-                    </div>
-                    <!-- /input-group -->
+                </div>
+                <!-- /input-group -->
                 </p>
             </div>
         </div>
@@ -225,6 +218,7 @@
 
 
     <script src="/JS File/Contact_us.js"></script>
+
 </body>
 
 </html>

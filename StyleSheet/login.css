@@ -160,6 +160,26 @@ input[type="text"].form-control.bg-dark {
 
 /* ========================================================================================================================== */
 
+.formm {
+    background-color: #090b13 !important;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.formm h1 {
+    color: white;
+}
+
+.poppp {
+    background-color: #090b13 !important;
+    border-radius: 15px;
+}
+
+.heddd {
+    color: rgb(196, 196, 196) !important;
+}
+
 
 /* ========================================================================================================================== */
 

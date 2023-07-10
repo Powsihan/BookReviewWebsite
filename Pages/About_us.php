@@ -360,10 +360,10 @@
 
                 <div class="col-md-6 ">
                     <ul class="list ">
-                        <li><a href="Home.html"><i class="fa-solid fa-house icoon "></i>Home</a></li>
-                        <li><a href="About_us.html"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
-                        <li><a href="Categories.html"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
-                        <li><a href="Contact_us.html"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
+                        <li><a href="../Pages/Home.php"><i class="fa-solid fa-house icoon "></i>Home</a></li>
+                        <li><a href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
+                        <li><a href="../Pages/Categories.php"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
+                        <li><a href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
                         <li><a href="# "><i class="fa-solid fa-chalkboard-user icoon "></i>Terms & Condition</a></li>
                         <li><a href="# "><i class="fa-solid fa-lock icoon "></i>Privacy Policy</a></li>
                     </ul>

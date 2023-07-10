@@ -14,7 +14,7 @@
     <!-- font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <title>About_us | ReadO</title>
+    <title>Login | ReadO</title>
 </head>
 
 <body>
@@ -84,7 +84,7 @@
     <div class="container d-flex flex-column flex-lg-row justify-content-evenly mt-5 pt-5">
         <!-- heading -->
         <div class="text-center text-lg-center mt-lg-5 pt-lg-5">
-            <img src="../images/logo.png" width="688px" height="216px" alt="" />
+            <img src="../images/logo.png" width="400 px" height="216px" alt="" />
             <!-- check it-->
             <p class="w-75 mx-auto ma-lg-0 fs-4">
 
@@ -92,8 +92,8 @@
         </div>
         <!-- form  -->
         <div class="formm" style="max-width: 28rem; width: 100%">
-            <div class="bg-white shadow rounded p-3 input-group-lg">
-                <h1 class="text-center">Log in</h1>
+            <div class="shadow rounded p-3 input-group-lg">
+                <h1 class="text-center">Log In</h1>
                 <div class="form-floating my-3">
                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" style="background-color: #F4F4F4">
                     <label for="floatingInput">Email address</label>
@@ -112,17 +112,17 @@
                 </a>
                 <!-- create from modal -->
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
+                        <div class="modal-content poppp text-light">
                             <div class="modal-header">
                                 <div class="">
                                     <h1 class="modal-title fs-2" id="exampleModalLabel">
-                                        sign up
+                                        Sign Up
                                     </h1>
-                                    <span class="text-muted fs-7">Join with us to discover something</span>
+                                    <span class="text-muted fs-7 heddd">Join with us to discover something</span>
                                 </div>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
@@ -137,7 +137,7 @@
                                 <input type="password" name="" class="form-control my-3" placeholder="password" id="" />
 
                                 <div class="row my-3">
-                                    <span class="text-muted fs-7">
+                                    <span class="text-muted fs-7 heddd">
                                         Date of Birth
                                         <i type="button" class="fa-solid fa-circle-question" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover"></i>
                                     </span>
@@ -181,7 +181,7 @@
                                     </div>
                                 </div>
                                 <div class="row my-3 jus">
-                                    <span class="text-muted fs-7">
+                                    <span class="text-muted fs-7 heddd">
                                         Gender
                                         <i type="button" class="fa-solid fa-circle-question" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover"></i>
                                     </span>
@@ -245,22 +245,23 @@
         </div>
     </div>
 
+    <!----------- Footer ------------>
     <footer class="footer-bs ">
         <div class="row ">
             <div class="col-md-3 footer-brand animated fadeInLeft ">
                 <img src="/images/logo.png " alt="logo " style="height:70px; width: 110px; ">
                 <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
-                <p>© 20023 ReadO, All rights reserved</p>
+                <p>© 2007 ReadO, All rights reserved</p>
             </div>
             <div class="col-md-4 footer-nav animated fadeInUp ">
                 <h4>Menu —</h4>
 
                 <div class="col-md-6 ">
                     <ul class="list ">
-                        <li><a href="Home.html"><i class="fa-solid fa-house icoon "></i>Home</a></li>
-                        <li><a href="About_us.html"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
-                        <li><a href="Categories.html"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
-                        <li><a href="Contact_us.html"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
+                        <li><a href="../Pages/Home.php"><i class="fa-solid fa-house icoon "></i>Home</a></li>
+                        <li><a href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
+                        <li><a href="../Pages/Categories.php"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
+                        <li><a href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
                         <li><a href="# "><i class="fa-solid fa-chalkboard-user icoon "></i>Terms & Condition</a></li>
                         <li><a href="# "><i class="fa-solid fa-lock icoon "></i>Privacy Policy</a></li>
                     </ul>
@@ -280,19 +281,22 @@
                 <h4>Newsletter</h4>
                 <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
                 <p>
-                <div class="input-group ">
-                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
-                    <span class="input-group-btn ">
-                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
+                    <div class="input-group ">
+                        <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
+                        <span class="input-group-btn ">
+                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i
+                                class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
                     </span>
-                </div>
-                <!-- /input-group -->
+                    </div>
+                    <!-- /input-group -->
                 </p>
             </div>
         </div>
         <hr>
-        <span class="align-items-center justify-content-center d-flex ">© 2023 ReadO, All rights reserved</span>
+        <span class="align-items-center justify-content-center d-flex ">© 2007 ReadO, All rights reserved</span>
     </footer>
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 

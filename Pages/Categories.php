@@ -1605,8 +1605,8 @@
 
 
 
-    <!----------- Footer ------------>
-    <footer class="footer-bs ">
+   <!----------- Footer ------------>
+   <footer class="footer-bs ">
         <div class="row ">
             <div class="col-md-3 footer-brand animated fadeInLeft ">
                 <img src="/images/logo.png " alt="logo " style="height:70px; width: 110px; ">
@@ -1618,10 +1618,10 @@
 
                 <div class="col-md-6 ">
                     <ul class="list ">
-                        <li><a href="Home.html"><i class="fa-solid fa-house icoon "></i>Home</a></li>
-                        <li><a href="About_us.html"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
-                        <li><a href="Categories.html"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
-                        <li><a href="Contact_us.html"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
+                        <li><a href="../Pages/Home.php"><i class="fa-solid fa-house icoon "></i>Home</a></li>
+                        <li><a href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon "></i>About Us</a></li>
+                        <li><a href="../Pages/Categories.php"><i class="fa-solid fa-book icoon "></i>Categories</a></li>
+                        <li><a href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon "></i>Contact Us</a></li>
                         <li><a href="# "><i class="fa-solid fa-chalkboard-user icoon "></i>Terms & Condition</a></li>
                         <li><a href="# "><i class="fa-solid fa-lock icoon "></i>Privacy Policy</a></li>
                     </ul>
@@ -1641,13 +1641,14 @@
                 <h4>Newsletter</h4>
                 <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
                 <p>
-                <div class="input-group ">
-                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
-                    <span class="input-group-btn ">
-                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
+                    <div class="input-group ">
+                        <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
+                        <span class="input-group-btn ">
+                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i
+                                class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
                     </span>
-                </div>
-                <!-- /input-group -->
+                    </div>
+                    <!-- /input-group -->
                 </p>
             </div>
         </div>

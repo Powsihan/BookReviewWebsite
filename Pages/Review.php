@@ -118,6 +118,7 @@
 
                         <div class="revbtn">
                             <a href="#" class="btn btn-primary">Buy</a>
+                            <a href="#" class="btn btn-primary" style="width: 90px;">Comment</a>
                         </div>
 
                     </div>

@@ -1,3 +1,30 @@
+<?php
+// display_book.php
+
+// Assuming you have established a database connection
+$connection = mysqli_connect("localhost", "root", "", "bookreview");
+
+// Function to get book details from the database
+function getBookDetails($connection) {
+    $query = "SELECT * FROM book WHERE ISBN ='1234567890'";
+    $result = mysqli_query($connection, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        return $row;
+    }
+
+    return false;
+}
+
+// Get book details
+$bookDetails = getBookDetails($connection);
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,8 +89,8 @@
                         <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                     </li>
                 </ul>
-                <form class="d-flex ms-auto" role="search">
-                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
+                <form class="d-flex ms-auto" role="search" action="../Pages/Review.php">
+                    <input name="isbn" class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
                     <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -81,7 +108,7 @@
 
 
     <!--Experinece Section -->
-    <section id="counts" class="counts">
+    <!-- <section id="counts" class="counts">
         <div class="container text-light" data-aos="fade-up">
             <div class="section-title">
                 <h2>Adventure</h2>
@@ -127,6 +154,45 @@
                 </div>
             </div>
 
+        </div>
+    </section> -->
+
+
+    <section id="counts" class="counts">
+        <div class="container text-light" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Adventure</h2>
+                <p><?php echo $bookDetails['Title']; ?></p>
+            </div>
+
+            <div class="row no-gutters ">
+                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start " data-aos="fade-right" data-aos-delay="100"><img src="../images/image-1.webp" alt=""></div>
+                <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+                    <div class="content d-flex flex-column justify-content-center review">
+                        <h3><?php echo $bookDetails['Title']; ?></h3>
+                        <h5>Details : </h5>
+                        <p class="card-text">ISBN: <?php echo $bookDetails['ISBN']; ?></p>
+                        <p class="card-text">Publication Date: <?php echo $bookDetails['Publication_Date']; ?></p>
+                        <p class="card-text">Author: <?php echo $bookDetails['Author']; ?></p>
+                        <div class="star-rating">
+                            <h5>Rating : </h5>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                        <h5>Standard Review :</h5>
+                        <p><?php echo $bookDetails['Review']; ?></p>
+                        <div class="revbtn">
+                            <a href="#" class="btn btn-primary">Buy</a>
+                            <a href="#" class="btn btn-primary" style="width: 90px;">Comment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -188,6 +254,17 @@
 
 
     <script src="/JS File/About_us.js"></script>
+    <script>
+        document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const isbnInput = document.querySelector('input[name="isbn"]');
+            if (isbnInput.value.trim() === '<?php echo $isbn; ?>') {
+                window.location.href = '../Pages/Review.php?isbn=' + encodeURIComponent(isbnInput.value.trim());
+            } else {
+                this.submit();
+            }
+        });
+    </script>
 
 
 

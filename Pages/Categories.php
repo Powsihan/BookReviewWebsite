@@ -1,3 +1,54 @@
+<?php
+$connection = mysqli_connect("localhost", "root", "", "bookreview");
+
+function getSortedBookDetails($connection)
+{
+    // Check if ISBN parameter is provided in the URL
+    if (isset($_GET['isbn'])) {
+        // Get the ISBN value from the URL
+        $isbn = $_GET['isbn'];
+
+        // Prepare the SQL query with a placeholder for the ISBN value
+        $query = "SELECT * FROM book WHERE ISBN = ?";
+
+        // Create a prepared statement
+        $stmt = mysqli_prepare($connection, $query);
+
+        // Bind the ISBN value to the prepared statement
+        mysqli_stmt_bind_param($stmt, "s", $isbn);
+
+        // Execute the prepared statement
+        mysqli_stmt_execute($stmt);
+
+        // Get the result of the query
+        $result = mysqli_stmt_get_result($stmt);
+
+        $books = array();
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $books[] = $row;
+        }
+
+        // Close the prepared statement
+        mysqli_stmt_close($stmt);
+
+        return $books;
+    }
+
+    // Return an empty array if ISBN is not provided in the URL
+    return array();
+}
+
+$books = getSortedBookDetails($connection);
+
+// Get the first book's ISBN from the array
+$isbn = isset($books[0]['ISBN']) ? $books[0]['ISBN'] : '';
+$isbn2 = isset($books[1]['ISBN']) ? $books[1]['ISBN'] : '';
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,8 +118,8 @@
                         <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                     </li>
                 </ul>
-                <form class="d-flex ms-auto" role="search">
-                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
+                <form class="d-flex ms-auto" role="search" action="../Pages/Review.php">
+                    <input name="isbn" class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
                     <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -80,10 +131,6 @@
         </div>
     </nav>
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
-
-
-
 
 
     <section style="margin-top: 150px;">
@@ -128,7 +175,7 @@
                                                     <p class="card-text">ISBN: 1234567890</p>
                                                     <p class="card-text">Publication Date: 01.01.2023</p>
                                                     <div class="revbtn">
-                                                        <a href="../Pages/Review.php" class="btn btn-primary">Review</a>
+                                                        <a href="../Pages/Review.php?isbn=<?php echo urlencode($isbn); ?>" class="btn btn-primary">Review</a>
                                                         <a href="#" class="btn btn-primary">Buy</a>
                                                     </div>
                                                 </div>
@@ -156,7 +203,7 @@
                                                     <p class="card-text">ISBN: 1234567890</p>
                                                     <p class="card-text">Publication Date: 01.01.2023</p>
                                                     <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
+                                                        <a href="../Pages/Review.php?isbn=<?php echo urlencode($isbn); ?>" class="btn btn-primary">Review</a>
                                                         <a href="#" class="btn btn-primary">Buy</a>
                                                     </div>
                                                 </div>
@@ -1605,8 +1652,8 @@
 
 
 
-   <!----------- Footer ------------>
-   <footer class="footer-bs ">
+    <!----------- Footer ------------>
+    <footer class="footer-bs ">
         <div class="row ">
             <div class="col-md-3 footer-brand animated fadeInLeft ">
                 <img src="/images/logo.png " alt="logo " style="height:70px; width: 110px; ">
@@ -1641,14 +1688,13 @@
                 <h4>Newsletter</h4>
                 <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
                 <p>
-                    <div class="input-group ">
-                        <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
-                        <span class="input-group-btn ">
-                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i
-                                class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
+                <div class="input-group ">
+                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
+                    <span class="input-group-btn ">
+                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
                     </span>
-                    </div>
-                    <!-- /input-group -->
+                </div>
+                <!-- /input-group -->
                 </p>
             </div>
         </div>
@@ -1662,6 +1708,18 @@
 
     <script type='text/javascript'></script>
     <script src="../JS File/Categories.js"></script>
+    <script>
+        document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const isbnInput = document.querySelector('input[name="isbn"]');
+            if (isbnInput.value.trim() === '<?php echo $isbn; ?>') {
+                window.location.href = '../Pages/Review.php?isbn=' + encodeURIComponent(isbnInput.value.trim());
+            } else {
+                this.submit();
+            }
+        });
+    </script>
+
 
 
 

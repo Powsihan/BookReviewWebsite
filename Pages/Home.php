@@ -63,10 +63,9 @@
                         <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                     </li>
                 </ul>
-                <form class="d-flex ms-auto" role="search">
-                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
-                    <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i
-                            class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
+                <form class="d-flex ms-auto" role="search" action="../Pages/Review.php">
+                    <input name="isbn" class="form-control me-2 bg-dark text-light glowing-border w-200 siz" type="search" placeholder="Search..." required aria-label="Search">
+                    <button class="btn btn-block btn-lg glow-button btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass fa-beat fa-lg"></i></button>
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-but">
@@ -263,7 +262,17 @@
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-
+    <script>
+        document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const isbnInput = document.querySelector('input[name="isbn"]');
+            if (isbnInput.value.trim() === '<?php echo $isbn; ?>') {
+                window.location.href = '../Pages/Review.php?isbn=' + encodeURIComponent(isbnInput.value.trim());
+            } else {
+                this.submit();
+            }
+        });
+    </script>
 
 
 

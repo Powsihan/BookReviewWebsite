@@ -1,24 +1,49 @@
 <?php
-// display_book.php
-
 // Assuming you have established a database connection
 $connection = mysqli_connect("localhost", "root", "", "bookreview");
 
-// Function to get book details from the database
-function getBookDetails($connection) {
-    $query = "SELECT * FROM book WHERE ISBN ='1234567890'";
-    $result = mysqli_query($connection, $query);
+// Function to get book details from the database by ISBN
+function getBookDetailsByISBN($connection, $isbn) {
+    $query = "SELECT * FROM book WHERE ISBN = ?";
+    
+    // Create a prepared statement
+    $stmt = mysqli_prepare($connection, $query);
+    
+    // Bind the ISBN value to the prepared statement
+    mysqli_stmt_bind_param($stmt, "s", $isbn);
+    
+    // Execute the prepared statement
+    mysqli_stmt_execute($stmt);
 
+    // Get the result of the query
+    $result = mysqli_stmt_get_result($stmt);
+
+    // Check if any data is returned
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
+        // Close the prepared statement
+        mysqli_stmt_close($stmt);
         return $row;
+    } else {
+        // No data found for the given ISBN
+        // Close the prepared statement
+        mysqli_stmt_close($stmt);
+        return false;
     }
-
-    return false;
 }
 
-// Get book details
-$bookDetails = getBookDetails($connection);
+// Check if ISBN parameter is provided in the URL
+if (isset($_GET['isbn'])) {
+    // Get the ISBN value from the URL
+    $isbn = $_GET['isbn'];
+
+    // Get book details by ISBN
+    $bookDetails = getBookDetailsByISBN($connection, $isbn);
+} else {
+    // Redirect to a page or display an error message if no ISBN is provided in the URL
+    header("Location: /error_page.php"); // Replace "/error_page.php" with the desired error page URL
+    exit;
+}
 ?>
 
 

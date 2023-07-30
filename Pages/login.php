@@ -200,14 +200,7 @@
                                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="">
-                                            <label class="form-check-label" for="flexRadioDefault3">
-                                                Coustom
-                                            </label>
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
-                                        </div>
-                                    </div>
+                                   
                                 </div>
 
                                 <div class="d-none" id="selectGender">

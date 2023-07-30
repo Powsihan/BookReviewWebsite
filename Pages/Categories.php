@@ -1,50 +1,4 @@
-<?php
-$connection = mysqli_connect("localhost", "root", "", "bookreview");
 
-function getSortedBookDetails($connection)
-{
-    // Check if ISBN parameter is provided in the URL
-    if (isset($_GET['isbn'])) {
-        // Get the ISBN value from the URL
-        $isbn = $_GET['isbn'];
-
-        // Prepare the SQL query with a placeholder for the ISBN value
-        $query = "SELECT * FROM book WHERE ISBN = ?";
-
-        // Create a prepared statement
-        $stmt = mysqli_prepare($connection, $query);
-
-        // Bind the ISBN value to the prepared statement
-        mysqli_stmt_bind_param($stmt, "s", $isbn);
-
-        // Execute the prepared statement
-        mysqli_stmt_execute($stmt);
-
-        // Get the result of the query
-        $result = mysqli_stmt_get_result($stmt);
-
-        $books = array();
-
-        while ($row = mysqli_fetch_assoc($result)) {
-            $books[] = $row;
-        }
-
-        // Close the prepared statement
-        mysqli_stmt_close($stmt);
-
-        return $books;
-    }
-
-    // Return an empty array if ISBN is not provided in the URL
-    return array();
-}
-
-$books = getSortedBookDetails($connection);
-
-// Get the first book's ISBN from the array
-$isbn = isset($books[0]['ISBN']) ? $books[0]['ISBN'] : '';
-$isbn2 = isset($books[1]['ISBN']) ? $books[1]['ISBN'] : '';
-?>
 
 
 
@@ -101,19 +55,6 @@ $isbn2 = isset($books[1]['ISBN']) ? $books[1]['ISBN'] : '';
                     <li class="nav-item">
                         <a class="nav-link active" href="../Pages/Categories.php"><i class="fa-solid fa-book icoon"></i>Categories</a>
                     </li>
-                    <!-- <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-rectangle-history-circle-plus"></i>
-                  Categories
-                </a>
-                        <ul class="dropdown-menu bg-color ">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> -->
                     <li class="nav-item ">
                         <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                     </li>
@@ -131,385 +72,87 @@ $isbn2 = isset($books[1]['ISBN']) ? $books[1]['ISBN'] : '';
         </div>
     </nav>
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
-
+   
+   
     <section style="margin-top: 150px;">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-auto ">
-                    <h3 class="me-2 hed">Adventures</h3>
-                </div>
-                <div class="col-auto text-right ">
-                    <a class="btn btn-primary me-2" href="#carouselExampleIndicators1" role="button" data-bs-slide="prev">
-                        <i class="fa fa-arrow-left"></i>
-                    </a>
-                    <a class="btn btn-primary  " href="#carouselExampleIndicators1" role="button" data-bs-slide="next">
-                        <i class="fa fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="col-12">
-                    <div id="carouselExampleIndicators1" class="carousel slide" data-bs-ride="carousel">
-                        <div class="slide">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <!-- card 1 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-1.webp" class="img-fluid" alt="">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
+       <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-auto ">
+                <h3 class="me-2 hed">Adventures</h3>
+            </div>
+            <div class="col-auto text-right ">
+                <a class="btn btn-primary me-2" href="#carouselExampleIndicators1" role="button" data-bs-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-primary  " href="#carouselExampleIndicators1" role="button" data-bs-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="slide">
+                        <div class="carousel-inner">
+
+                            <?php
+                            // Assuming you have established a database connection
+                            $connection = mysqli_connect("localhost", "root", "", "bookreview");
+
+                            // Function to get all book details from the database
+                            function getAllBooksDetails($connection) {
+                                $query = "SELECT * FROM book";
+                                $result = mysqli_query($connection, $query);
+                                $books = array();
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $books[] = $row;
+                                }
+                                return $books;
+                            }
+
+                            // Get all book details
+                            $allBooks = getAllBooksDetails($connection);
+
+                            // Check if any data is returned
+                            if (!empty($allBooks)) {
+                                foreach ($allBooks as $book) {
+                                    ?>
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <!-- card -->
+                                            <div class="col-sm-3">
+                                                <div class="thumb-wrapper">
+                                                    <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
+                                                    <div class="img-box">
+                                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book['Image']) ; ?>" alt="">
                                                     </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="../Pages/Review.php?isbn=<?php echo urlencode($isbn); ?>" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 2 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-2.webp" class="img-fluid" alt="Headphone">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="../Pages/Review.php?isbn=<?php echo urlencode($isbn); ?>" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 3 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-3.webp" class="img-fluid" alt="Macbook">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 4 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon" id="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-4.webp" class="img-fluid" alt="Nikon">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- card 5 -->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-5.webp" class="img-fluid" alt="Play Station">
-                                                </div>
-                                                <div class="thumb-content">
                                                     <div class="thumb-content">
-                                                        <h4>Apple iPad</h4>
-                                                        <div class="star-rating">
-                                                            <ul class="list-inline">
-                                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-                                                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <p class="card-text">Author: Book Author</p>
-                                                        <p class="card-text">ISBN: 1234567890</p>
-                                                        <p class="card-text">Publication Date: 01.01.2023</p>
+                                                        <h4><?php echo $book['Title']; ?></h4>
+                                                       
+                                                        <p class="card-text">Author: <?php echo $book['Author']; ?></p>
+                                                        <p class="card-text">ISBN: <?php echo $book['ISBN']; ?></p>
+                                                        <p class="card-text">Publication Date: <?php echo $book['Publication_Date']; ?></p>
                                                         <div class="revbtn">
-                                                            <a href="#" class="btn btn-primary">Review</a>
+                                                            <a href="../Pages/Review.php?isbn=<?php echo urlencode($book['Title']); ?>" class="btn btn-primary">Review</a>
                                                             <a href="#" class="btn btn-primary">Buy</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- card 6 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-6.webp" class="img-fluid" alt="Macbook">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 7 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-7.webp" class="img-fluid" alt="Speaker">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 8 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-8.webp" class="img-fluid" alt="Galaxy">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <!-- card end -->
                                         </div>
                                     </div>
-                                </div>
-                                <!-- card 9 -->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-9.webp" class="img-fluid" alt="iPhone">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 10 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image.webp" class="img-fluid" alt="Canon">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 11 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-1.webp" class="img-fluid" alt="Pixel">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 12 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                <div class="img-box">
-                                                    <img src="../images/image-2.webp" class="img-fluid" alt="Watch">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card end -->
-                                    </div>
-                                </div>
-                            </div>
+                                    <?php
+                                }
+                            } else {
+                                // No books found
+                                // Display a message or handle the case when no books are available
+                            }
+                            ?>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
+       </div>
     </section>
 
     <section style="margin-top: 150px;">

@@ -44,6 +44,7 @@ if (isset($_GET['isbn'])) {
     header("Location: /error_page.php"); // Replace "/error_page.php" with the desired error page URL
     exit;
 }
+
 ?>
 
 
@@ -191,7 +192,7 @@ if (isset($_GET['isbn'])) {
             </div>
 
             <div class="row no-gutters ">
-                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start " data-aos="fade-right" data-aos-delay="100"><img src="../images/image-1.webp" alt=""></div>
+                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start " data-aos="fade-right" data-aos-delay="100"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($bookDetails['Image']) ; ?>" alt=""></div>
                 <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
                     <div class="content d-flex flex-column justify-content-center review">
                         <h3><?php echo $bookDetails['Title']; ?></h3>

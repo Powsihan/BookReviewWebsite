@@ -78,7 +78,7 @@
        <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-auto ">
-                <h3 class="me-2 hed">Adventures</h3>
+                <h3 class="me-2 hed">ALL Books</h3>
             </div>
             <div class="col-auto text-right ">
                 <a class="btn btn-primary me-2" href="#carouselExampleIndicators1" role="button" data-bs-slide="prev">
@@ -118,7 +118,7 @@
                                     <div class="carousel-item active">
                                         <div class="row">
                                             <!-- card -->
-                                            <div class="col-sm-3">
+                                            <div class="">
                                                 <div class="thumb-wrapper">
                                                     <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
                                                     <div class="img-box">

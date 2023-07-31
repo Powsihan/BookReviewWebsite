@@ -344,11 +344,12 @@
         </div>
     </section>
 
+
     <section style="margin-top: 150px;">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-auto ">
-                    <h3 class="me-2 hed">Love</h3>
+                    <h3 class="me-2 hed">FICTION</h3>
                 </div>
                 <div class="col-auto text-right ">
                     <a class="btn btn-primary me-2" href="#carouselExampleIndicators4" role="button" data-bs-slide="prev">
@@ -362,366 +363,80 @@
                     <div id="carouselExampleIndicators4" class="carousel slide" data-bs-ride="carousel">
                         <div class="slide">
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <!-- card 1 -->
-                                        <div class="col-sm-3">
+                                <?php
+                                // Assuming you have established a database connection
+                                $connection = mysqli_connect("localhost", "root", "", "bookreview");
+
+                                // Function to get all book details from the database
+                                function getAllBooksDetails3($connection)
+                                {
+                                    $query = "SELECT * FROM book WHERE Categories='fiction'";
+                                    $result = mysqli_query($connection, $query);
+                                    $books = array();
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $books[] = $row;
+                                    }
+                                    return $books;
+                                }
+
+                                // Get all book details
+                                $allBooks = getAllBooksDetails3($connection);
+
+                                // Check if any data is returned
+                                if (!empty($allBooks)) {
+                                    $counter = 0;
+                                    foreach ($allBooks as $book) {
+                                        // If the counter is a multiple of 4, start a new carousel item
+                                        if ($counter % 4 === 0) {
+                                            $activeClass = ($counter === 0) ? 'active' : '';
+                                            echo '<div class="carousel-item ' . $activeClass . '"><div class="row">';
+                                        }
+                                ?>
+
+                                        <!-- card -->
+                                        <div class="col-md-3"> <!-- Use appropriate column class to fit 4 cards in one row -->
                                             <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
                                                 <div class="img-box">
-                                                    <img src="../images/love/ebook-cover-romance-design-template-5bb3e22ad579c40009106791cd696486.jpg" class="img-fluid" alt="">
+                                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book['Image']); ?>" alt="">
                                                 </div>
                                                 <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
+                                                    <h4><?php echo $book['Title']; ?></h4>
+                                                    <p class="card-text">Author: <?php echo $book['Author']; ?></p>
+                                                    <p class="card-text">ISBN: <?php echo $book['ISBN']; ?></p>
+                                                    <p class="card-text">Publication Date: <?php echo $book['Publication_Date']; ?></p>
                                                     <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 2 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/kindle-book-cover-design-template-35ef6710c1597a389b7ec807805b9ff4.jpg" class="img-fluid" alt="Headphone">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 3 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/kindle-book-cover-design-template-d39a40a2dc76266a8a3ab1bc81acfcb1.jpg" class="img-fluid" alt="Macbook">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 4 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/love-book-cover-or-movie-flyer-template-design-b25f4ec81d5fb7242bb37984ddd82f9a.jpg" class="img-fluid" alt="Nikon">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- card 5 -->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/medieval-romance-ebook-wattpad-cover-design-template-b4f7d9a22df6f29d2a5e48d55f01bb37.jpg" class="img-fluid" alt="Play Station">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <div class="thumb-content">
-                                                        <h4>Apple iPad</h4>
-                                                        <div class="star-rating">
-                                                            <ul class="list-inline">
-                                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                                <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-                                                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <p class="card-text">Author: Book Author</p>
-                                                        <p class="card-text">ISBN: 1234567890</p>
-                                                        <p class="card-text">Publication Date: 01.01.2023</p>
-                                                        <div class="revbtn">
-                                                            <a href="#" class="btn btn-primary">Review</a>
-                                                            <a href="#" class="btn btn-primary">Buy</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 6 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/romance-novel-ebook-kindle-cover-design-template-9ab0a63b3ab9741d079c219f9681c7ab.jpg" class="img-fluid" alt="Macbook">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 7 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/romantic-love-book-cover-design-template-96659088739c38149b0bc4d2a0c67495.jpg" class="img-fluid" alt="Speaker">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 8 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/somebody-to-love-book-cover-design-template-5d4024f2982f3c81046e1fd91c755716.jpg" class="img-fluid" alt="Galaxy">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- card 9 -->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/victorian-earl-historical-romance-book-header-design-template-29bbe639562dfeee267918a5f7970553.jpg" class="img-fluid" alt="iPhone">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 10 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/victorian-historical-romance-novel-header-design-template-8174f26f5d44c590137ccbea8052bfc6.jpg" class="img-fluid" alt="Canon">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 11 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/village-love-story-historical-romance-header-design-template-b3c737c884a9959c425f53e924d5ff8d.jpg" class="img-fluid" alt="Pixel">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
-                                                        <a href="#" class="btn btn-primary">Buy</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card 12 -->
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                                                <div class="img-box">
-                                                    <img src="../images/love/wintery-romance-novel-ebook-wattpad-cover-design-template-e19d0eb10c4e2ad266e984bea50c76d5.jpg" class="img-fluid" alt="Watch">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4>Apple iPad</h4>
-                                                    <div class="star-rating">
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p class="card-text">Author: Book Author</p>
-                                                    <p class="card-text">ISBN: 1234567890</p>
-                                                    <p class="card-text">Publication Date: 01.01.2023</p>
-                                                    <div class="revbtn">
-                                                        <a href="#" class="btn btn-primary">Review</a>
+                                                        <a href="../Pages/Review.php?isbn=<?php echo urlencode($book['Title']); ?>" class="btn btn-primary">Review</a>
                                                         <a href="#" class="btn btn-primary">Buy</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- card end -->
-                                    </div>
-                                </div>
+
+                                <?php
+                                        // If the counter is a multiple of 4, close the carousel item
+                                        if ($counter % 4 === 3 || $counter === count($allBooks) - 1) {
+                                            echo '</div></div>'; // Close the row and carousel item container
+                                        }
+
+                                        $counter++;
+                                    }
+                                } else {
+                                    // No books found
+                                    // Display a message or handle the case when no books are available
+                                }
+                                ?>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
+
+    
 
 
 

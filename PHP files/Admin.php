@@ -50,10 +50,11 @@
                 <tr>
                     <td>Select Categories:</td>
                     <td><select name="categories">
-                            <option value="first">Adventure</option>
-                            <option value="second" selected>Fiction</option>
-                            <option value="third">Horror</option>
-                            <option value="third">Love</option>
+                            <option value="historical">Historical</option>
+                            <option value="horror">Horror</option>
+                            <option value="love">Love</option>
+                            <option value="fiction" selected>Fiction</option>
+                            
                         </select></td>
                 </tr>
                 <tr>

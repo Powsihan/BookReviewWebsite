@@ -185,7 +185,7 @@
         text-align: center;
         position: relative;
         box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-        height: 590px;
+        height: 520px;
     }
     
     .carousel .item .img-box {
@@ -219,6 +219,8 @@
     .carousel .thumb-content h4 {
         color: white;
         margin-top: 10px;
+        font-size: 14px;
+        font-weight: 800;
     }
     
     .carousel .thumb-content .revbtn {

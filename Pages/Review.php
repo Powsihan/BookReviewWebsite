@@ -117,64 +117,10 @@ if (isset($_GET['isbn'])) {
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-
-
-
-    <!--Experinece Section -->
-    <!-- <section id="counts" class="counts">
-        <div class="container text-light" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Adventure</h2>
-                <p>THE DARK</p>
-            </div>
-
-            <div class="row no-gutters ">
-                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start " data-aos="fade-right" data-aos-delay="100"><img src="../images/image-1.webp" alt=""></div>
-                <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
-                    <div class="content d-flex flex-column justify-content-center review">
-                        <h3>The dark adeleNood</h3>
-                        <h5>Details : </h5>
-                        <p class="card-text">ISBN : 1234567890</p>
-                        <p class="card-text">Publication Date : 01.01.2023</p>
-                        <p class="card-text">Author : John McGahern</p>
-                        <div class="star-rating">
-                            <h5>Rating : </h5>
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                        </div>
-                        <h5>Standard Review : </h5>
-
-                        <p>
-                            The Dark, widely acclaimed, yet infamously banned, is John McGahern’s sensitive, perceptive, and beautifully written portrayal of a young man’s coming-of-age in rural Ireland. Imaginative and introverted, the boy is successful in school, but bitterly
-                            confused by the guilt-inducing questions he endures from the priests who should be his venerated guides. His relationship with his bullying, bigoted, widowed father is similarly conflicted — touched with both deep love and
-                            carefully suppressed hatred. When he must leave home to further his education, their relationship is drawn to an emotional climax that teaches both father and son some of the most intricate truths about manhood.
-                        </p>
-
-
-                        <div class="revbtn">
-                            <a href="#" class="btn btn-primary">Buy</a>
-                            <a href="#" class="btn btn-primary" style="width: 90px;">Comment</a>
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
-
-        </div>
-    </section> -->
-
-
     <section id="counts" class="counts">
         <div class="container text-light" data-aos="fade-up">
             <div class="section-title">
-                <h2><?php echo $bookDetails['ISBN']; ?></h2>
+                <h2><?php echo $bookDetails['Categories']; ?></h2>
                 <p><?php echo $bookDetails['Title']; ?></p>
             </div>
 
@@ -182,11 +128,11 @@ if (isset($_GET['isbn'])) {
                 <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start " data-aos="fade-right" data-aos-delay="100"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($bookDetails['Image']) ; ?>" alt=""></div>
                 <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
                     <div class="content d-flex flex-column justify-content-center review">
-                        <h3><?php echo $bookDetails['Title']; ?></h3>
-                        <h5>Details : </h5>
-                        <p class="card-text">ISBN: <?php echo $bookDetails['ISBN']; ?></p>
-                        <p class="card-text">Publication Date: <?php echo $bookDetails['Publication_Date']; ?></p>
-                        <p class="card-text">Author: <?php echo $bookDetails['Author']; ?></p>
+                        <h3 style="text-transform: uppercase;">Title :&nbsp <?php echo $bookDetails['Title']; ?></h3>
+                        <h5 style="font-size: 26px;">Details : </h5>
+                        <p class="card-text">ISBN :&nbsp <?php echo $bookDetails['ISBN']; ?></p>
+                        <p class="card-text">Publication Date :&nbsp <?php echo $bookDetails['Publication_Date']; ?></p>
+                        <p class="card-text">Author :&nbsp <?php echo $bookDetails['Author']; ?></p>
                         <div class="star-rating">
                             <h5>Rating : </h5>
                             <ul class="list-inline">

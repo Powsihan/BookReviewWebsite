@@ -174,7 +174,7 @@ if (isset($_GET['isbn'])) {
     <section id="counts" class="counts">
         <div class="container text-light" data-aos="fade-up">
             <div class="section-title">
-                <h2>Adventure</h2>
+                <h2><?php echo $bookDetails['ISBN']; ?></h2>
                 <p><?php echo $bookDetails['Title']; ?></p>
             </div>
 
@@ -201,7 +201,7 @@ if (isset($_GET['isbn'])) {
                         <p><?php echo $bookDetails['Review']; ?></p>
                         <div class="revbtn">
                             <a href="#" class="btn btn-primary">Buy</a>
-                            <a href="#" class="btn btn-primary" style="width: 90px;">Comment</a>
+                            <!-- <a href="#" class="btn btn-primary" style="width: 90px;">Comment</a> -->
                         </div>
                     </div>
                 </div>

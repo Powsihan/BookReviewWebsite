@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,87 +67,97 @@
         </div>
     </nav>
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-   
-   
+
+
     <section style="margin-top: 150px;">
-       <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-auto ">
-                <h3 class="me-2 hed">ALL Books</h3>
-            </div>
-            <div class="col-auto text-right ">
-                <a class="btn btn-primary me-2" href="#carouselExampleIndicators1" role="button" data-bs-slide="prev">
-                    <i class="fa fa-arrow-left"></i>
-                </a>
-                <a class="btn btn-primary  " href="#carouselExampleIndicators1" role="button" data-bs-slide="next">
-                    <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-12">
-                <div id="carouselExampleIndicators1" class="carousel slide" data-bs-ride="carousel">
-                    <div class="slide">
-                        <div class="carousel-inner">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto ">
+                    <h3 class="me-2 hed">ALL Books</h3>
+                </div>
+                <div class="col-auto text-right ">
+                    <a class="btn btn-primary me-2" href="#carouselExampleIndicators1" role="button" data-bs-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary  " href="#carouselExampleIndicators1" role="button" data-bs-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div id="carouselExampleIndicators1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="slide">
+                            <div class="carousel-inner">
+                                <?php
+                                // Assuming you have established a database connection
+                                $connection = mysqli_connect("localhost", "root", "", "bookreview");
 
-                            <?php
-                            // Assuming you have established a database connection
-                            $connection = mysqli_connect("localhost", "root", "", "bookreview");
-
-                            // Function to get all book details from the database
-                            function getAllBooksDetails($connection) {
-                                $query = "SELECT * FROM book";
-                                $result = mysqli_query($connection, $query);
-                                $books = array();
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    $books[] = $row;
+                                // Function to get all book details from the database
+                                function getAllBooksDetails($connection)
+                                {
+                                    $query = "SELECT * FROM book WHERE Categories='1'";
+                                    $result = mysqli_query($connection, $query);
+                                    $books = array();
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $books[] = $row;
+                                    }
+                                    return $books;
                                 }
-                                return $books;
-                            }
 
-                            // Get all book details
-                            $allBooks = getAllBooksDetails($connection);
+                                // Get all book details
+                                $allBooks = getAllBooksDetails($connection);
 
-                            // Check if any data is returned
-                            if (!empty($allBooks)) {
-                                foreach ($allBooks as $book) {
-                                    ?>
-                                    <div class="carousel-item active">
-                                        <div class="row">
-                                            <!-- card -->
-                                            <div class="">
-                                                <div class="thumb-wrapper">
-                                                    <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
-                                                    <div class="img-box">
-                                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book['Image']) ; ?>" alt="">
-                                                    </div>
-                                                    <div class="thumb-content">
-                                                        <h4><?php echo $book['Title']; ?></h4>
-                                                       
-                                                        <p class="card-text">Author: <?php echo $book['Author']; ?></p>
-                                                        <p class="card-text">ISBN: <?php echo $book['ISBN']; ?></p>
-                                                        <p class="card-text">Publication Date: <?php echo $book['Publication_Date']; ?></p>
-                                                        <div class="revbtn">
-                                                            <a href="../Pages/Review.php?isbn=<?php echo urlencode($book['Title']); ?>" class="btn btn-primary">Review</a>
-                                                            <a href="#" class="btn btn-primary">Buy</a>
-                                                        </div>
+                                // Check if any data is returned
+                                if (!empty($allBooks)) {
+                                    $counter = 0;
+                                    foreach ($allBooks as $book) {
+                                        // If the counter is a multiple of 4, start a new carousel item
+                                        if ($counter % 4 === 0) {
+                                            $activeClass = ($counter === 0) ? 'active' : '';
+                                            echo '<div class="carousel-item ' . $activeClass . '"><div class="row">';
+                                        }
+                                ?>
+
+                                        <!-- card -->
+                                        <div class="col-md-3"> <!-- Use appropriate column class to fit 4 cards in one row -->
+                                            <div class="thumb-wrapper">
+                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
+                                                <div class="img-box">
+                                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book['Image']); ?>" alt="">
+                                                </div>
+                                                <div class="thumb-content">
+                                                    <h4><?php echo $book['Title']; ?></h4>
+                                                    <p class="card-text">Author: <?php echo $book['Author']; ?></p>
+                                                    <p class="card-text">ISBN: <?php echo $book['ISBN']; ?></p>
+                                                    <p class="card-text">Publication Date: <?php echo $book['Publication_Date']; ?></p>
+                                                    <div class="revbtn">
+                                                        <a href="../Pages/Review.php?isbn=<?php echo urlencode($book['Title']); ?>" class="btn btn-primary">Review</a>
+                                                        <a href="#" class="btn btn-primary">Buy</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- card end -->
                                         </div>
-                                    </div>
-                                    <?php
+                                        <!-- card end -->
+
+                                <?php
+                                        // If the counter is a multiple of 4, close the carousel item
+                                        if ($counter % 4 === 3 || $counter === count($allBooks) - 1) {
+                                            echo '</div></div>'; // Close the row and carousel item container
+                                        }
+
+                                        $counter++;
+                                    }
+                                } else {
+                                    // No books found
+                                    // Display a message or handle the case when no books are available
                                 }
-                            } else {
-                                // No books found
-                                // Display a message or handle the case when no books are available
-                            }
-                            ?>
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-       </div>
+        </div>
     </section>
 
     <section style="margin-top: 150px;">

@@ -17,8 +17,9 @@ $image = $_POST["image"];
 $publication = $_POST["publication"];
 $author = $_POST["author"];
 $review = $_POST["review"];
+$category = $_POST["categories"];
 
-$query = "insert into book(ISBN,Title,Image,Publication_Date,Author,Review) values('$isbn','$title','$author','$publication','$author','$review')"; //Insert query to add book details into the book_info table
+$query = "insert into book(ISBN,Title,Image,Publication_Date,Author,Review,Categories) values('$isbn','$title','$author','$publication','$author','$review','$category')"; //Insert query to add book details into the book_info table
 $result = mysqli_query($db, $query);
 
 // Check if the insertion was successful

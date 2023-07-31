@@ -185,6 +185,7 @@
         text-align: center;
         position: relative;
         box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        height: 590px;
     }
     
     .carousel .item .img-box {

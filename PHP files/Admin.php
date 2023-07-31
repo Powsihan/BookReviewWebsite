@@ -16,6 +16,9 @@
 
 <body>
     <div class="container mt-5">
+        <h1 class="text-center">Admin Panel</h1>
+        <br>
+        <hr>
         <h4 class="text-center">Book Add</h4>
         <!-- Once the form is submitted, all the form data is forwarded to InsertBooks.php -->
         <form action="InsertBooks.php" method="post">
@@ -45,6 +48,15 @@
                     <td><input type="text" name="review" class="form-control" placeholder="Review"></td>
                 </tr>
                 <tr>
+                    <td>Select Categories:</td>
+                    <td><select name="categories">
+                            <option value="first">Adventure</option>
+                            <option value="second" selected>Fiction</option>
+                            <option value="third">Horror</option>
+                            <option value="third">Love</option>
+                        </select></td>
+                </tr>
+                <tr>
                     <td></td>
                     <td>
                         <input type="submit" value="Submit" class="btn btn-primary">
@@ -55,6 +67,7 @@
         </form>
     </div>
     <br><br>
+    <hr>
     <h4 class="text-center"> All Book Details</h4>
 
     <div class="container mt-5">
@@ -70,19 +83,24 @@
         ?>
         <table class="table table-bordered mt-4">
             <tr>
+                <th>No</th>
                 <th>ISBN</th>
                 <th>Title</th>
+                <th>Category</th>
                 <th>Publication_Date</th>
                 <th>Author</th>
                 <th>Review</th>
             </tr>
             <?php
+            $rowNumber = 1;
             // Use a foreach loop to iterate over the result and display each row
             while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <tr>
+                    <td><?php echo $rowNumber++; ?></td>
                     <td><?php echo $row["ISBN"]; ?></td>
                     <td><?php echo $row["Title"]; ?></td>
+                    <td><?php echo $row["Categories"]; ?></td>
                     <td><?php echo $row["Publication_Date"]; ?></td>
                     <td><?php echo $row["Author"]; ?></td>
                     <td><?php echo $row["Review"]; ?></td>
@@ -94,8 +112,8 @@
     </div>
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-   <!-- SweetAlert CDN -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+    <!-- SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
 
 </body>
 

@@ -134,7 +134,7 @@
                                 </div>
                                 <input type="email" name="" class="form-control my-3" placeholder="Email" id="" />
                                 <input type="password" name="" class="form-control my-3" placeholder="password" id="" />
-
+                                <input type="password" name="" class="form-control my-3" placeholder=" Conform password" id="" />
                                 <div class="row my-3">
                                     <span class="text-muted fs-7 heddd">
                                         Date of Birth

@@ -46,19 +46,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="../Pages/Categories.php"><i class="fa-solid fa-book icoon"></i>Categories</a>
                     </li>
-                    <!-- <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-rectangle-history-circle-plus"></i>
-                  Categories
-                </a>
-                        <ul class="dropdown-menu bg-color ">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> -->
                     <li class="nav-item ">
                         <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                     </li>
@@ -281,7 +268,7 @@
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
+                            <h4>Tharushi</h4>
                             <span>Product Manager</span>
                         </div>
                     </div>
@@ -299,7 +286,7 @@
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>William </h4>
+                            <h4>Upeksha</h4>
                             <span>CTO</span>
                         </div>
                     </div>
@@ -317,8 +304,8 @@
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
+                            <h4>Dinithi</h4>
+                            <span>Designer</span>
                         </div>
                     </div>
                 </div>
@@ -334,8 +321,8 @@
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
+                            <h4>Nuwaifa</h4>
+                            <span>Designer</span>
                         </div>
                     </div>
                 </div>

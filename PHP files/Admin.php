@@ -16,12 +16,24 @@
 
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Admin Panel</h1>
+        <h1 class="text-center" style="font-weight: bold;">Admin Panel</h1>
         <br>
         <hr>
-        <h4 class="text-center">Book Add</h4>
+        <!-- Search Book Form -->
+        <h4 class="text-center" style="font-weight: bold;">Search Books</h4>
+        <form action="search_books.php" method="post" class="mt-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search book by title or Category or Author">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+
+        <br><br>
+        <hr>
+        <h4 class="text-center" style="font-weight: bold;">Book Add</h4>
         <!-- Once the form is submitted, all the form data is forwarded to InsertBooks.php -->
         <form action="InsertBooks.php" method="post">
+
             <table class="table table-bordered mt-4">
                 <tr>
                     <td>Enter ISBN :</td>
@@ -45,7 +57,7 @@
                 </tr>
                 <tr>
                     <td>Enter Review:</td>
-                    <td><input type="text" name="review" class="form-control" placeholder="Review"></td>
+                    <td><textarea type="text" name="review" class="form-control" placeholder="Review"></textarea></td>
                 </tr>
                 <tr>
                     <td>Select Categories:</td>
@@ -54,7 +66,7 @@
                             <option value="horror">Horror</option>
                             <option value="love">Love</option>
                             <option value="fiction" selected>Fiction</option>
-                            
+
                         </select></td>
                 </tr>
                 <tr>
@@ -65,11 +77,23 @@
                     </td>
                 </tr>
             </table>
+
         </form>
     </div>
     <br><br>
     <hr>
-    <h4 class="text-center"> All Book Details</h4>
+    <h4 class="text-center" style="font-weight: bold;">Update Books</h4>
+        <form action="update_book.php" method="post" class="mt-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search book by ISBN ">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+
+        <br><br>
+        <hr>
+
+    <h4 class="text-center" style="font-weight: bold;"> All Book Details</h4>
 
     <div class="container mt-5">
         <?php
@@ -82,34 +106,42 @@
         $query = "select * from book"; //search with a book name in the table book_info
         $result = mysqli_query($db, $query);
         ?>
-        <table class="table table-bordered mt-4">
-            <tr>
-                <th>No</th>
-                <th>ISBN</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Publication_Date</th>
-                <th>Author</th>
-                <th>Review</th>
-            </tr>
-            <?php
-            $rowNumber = 1;
-            // Use a foreach loop to iterate over the result and display each row
-            while ($row = mysqli_fetch_assoc($result)) {
-            ?>
-                <tr>
-                    <td><?php echo $rowNumber++; ?></td>
-                    <td><?php echo $row["ISBN"]; ?></td>
-                    <td><?php echo $row["Title"]; ?></td>
-                    <td><?php echo $row["Categories"]; ?></td>
-                    <td><?php echo $row["Publication_Date"]; ?></td>
-                    <td><?php echo $row["Author"]; ?></td>
-                    <td><?php echo $row["Review"]; ?></td>
-                </tr>
-            <?php
-            }
-            ?>
-        </table>
+        <!-- Search Results Table with Fixed Header and Scrolling Content -->
+        <div style="max-height: 700px; overflow-y: scroll;">
+            <table class="table table-bordered mt-4">
+                <thead style=" position: sticky; top: -1px; z-index: 1;">
+                    <tr>
+                        <th>No</th>
+                        <th>ISBN</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Publication_Date</th>
+                        <th>Author</th>
+                        <th>Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $rowNumber = 1;
+                    // Use a while loop to iterate over the result and display each row
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <tr>
+                            <td><?php echo $rowNumber++; ?></td>
+                            <td><?php echo $row["ISBN"]; ?></td>
+                            <td><?php echo $row["Title"]; ?></td>
+                            <td><?php echo $row["Categories"]; ?></td>
+                            <td><?php echo $row["Publication_Date"]; ?></td>
+                            <td><?php echo $row["Author"]; ?></td>
+                            <td><?php echo $row["Review"]; ?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
     </div>
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

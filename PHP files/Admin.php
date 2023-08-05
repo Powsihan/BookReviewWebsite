@@ -85,7 +85,7 @@
     <h4 class="text-center" style="font-weight: bold;">Update Books</h4>
         <form action="update_book.php" method="post" class="mt-4">
             <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="Search book by ISBN ">
+                <input type="text" name="search" class="form-control" placeholder="Search for the book by ISBN whose is going to update">
                 <button type="submit" class="btn btn-primary">Search</button>
             </div>
         </form>

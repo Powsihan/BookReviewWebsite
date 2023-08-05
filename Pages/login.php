@@ -18,6 +18,13 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['error'])) {
+        if ($_GET['error'] == 5) {
+            echo 'Invalid password or email';
+        } 
+    }
+    ?>
     <script src="/JS File/About_us.js"></script>
     <!-- bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -91,6 +98,7 @@
         </div>
         <!-- form  -->
         <div class="formm" style="max-width: 28rem; width: 100%">
+        <form action="login_process.php" method="POST">
             <div class="shadow rounded p-3 input-group-lg">
                 <h1 class="text-center">Log In</h1>
                 <div class="form-floating my-3">
@@ -111,7 +119,10 @@
                 </a>
                 <!-- create from modal -->
                 <!-- Modal -->
-                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</form>
+<form action="process.php" method="POST">
+           
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content poppp text-light">
                             <div class="modal-header">
@@ -233,7 +244,7 @@
                     </button>
                 </div>
             </div>
-
+                                        </form>
         </div>
     </div>
 

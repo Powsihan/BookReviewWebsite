@@ -61,7 +61,7 @@
                 </tr>
                 <tr>
                     <td>Select Categories:</td>
-                    <td><select name="categories">
+                    <td><select name="categories" class="form-control">
                             <option value="historical">Historical</option>
                             <option value="horror">Horror</option>
                             <option value="love">Love</option>

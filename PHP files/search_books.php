@@ -29,7 +29,7 @@
         $searchValue = $_POST['search'];
 
         // Prepare the query to search for books by title or author
-        $query = "SELECT * FROM book WHERE Title LIKE '%$searchValue%' OR Categories LIKE '%$searchValue%' OR Author LIKE '%$searchValue%'";
+        $query = "SELECT * FROM book WHERE Title LIKE '%$searchValue%' OR Categories LIKE '%$searchValue%' OR Author LIKE '%$searchValue%' OR ISBN LIKE '%$searchValue%'";
         $result = mysqli_query($db, $query);
 
         // Check if any results are found
@@ -41,11 +41,11 @@
             <table class="table table-bordered mt-4">
                 <tr>
                     <th>No</th>
-                    <th>ISBN</th>
+                    <th style="width: 130px;">ISBN</th>
                     <th>Title</th>
                     <th>Category</th>
                     <th>Publication_Date</th>
-                    <th>Author</th>
+                    <th style="width: 100px;">Author</th>
                     <th>Review</th>
                 </tr>
                 <?php

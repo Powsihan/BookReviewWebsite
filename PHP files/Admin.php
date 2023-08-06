@@ -23,7 +23,7 @@
         <h4 class="text-center" style="font-weight: bold;">Search Books</h4>
         <form action="search_books.php" method="post" class="mt-4">
             <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="Search book by title or Category or Author">
+                <input type="text" name="search" class="form-control" placeholder="Search book by title or Category or Author or ISBN">
                 <button type="submit" class="btn btn-primary">Search</button>
             </div>
         </form>
@@ -112,11 +112,11 @@
                 <thead style=" position: sticky; top: -1px; z-index: 1;">
                     <tr>
                         <th>No</th>
-                        <th>ISBN</th>
+                        <th style="width: 130px;">ISBN</th>
                         <th>Title</th>
                         <th>Category</th>
                         <th>Publication_Date</th>
-                        <th>Author</th>
+                        <th style="width: 100px;">Author</th>
                         <th>Review</th>
                     </tr>
                 </thead>

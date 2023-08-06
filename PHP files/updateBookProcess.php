@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_query($db, $update_query)) {
             // Redirect back to admin.php after updating
             echo "<script>
-            alert('Book Added Successfully!');
+            alert('Book Updated Successfully!');
             window.location = 'Admin.php'; // Redirect to the desired page after successful insertion
           </script>";
             exit();

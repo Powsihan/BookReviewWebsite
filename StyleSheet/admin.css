@@ -1,3 +1,9 @@
+.vertical-line {
+    width: 2px;
+    background-color: white;
+    height: 410px;
+}
+
 .custom-placeholder::-webkit-input-placeholder {
     color: white;
 }
@@ -24,4 +30,13 @@
 .tabhed {
     background-color: #090b13 !important;
     color: white !important;
+}
+
+.loggg {
+    background-color: #002dc0;
+    border: none;
+}
+
+.loggg:hover {
+    background-color: #00156b;
 }

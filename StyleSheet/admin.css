@@ -1,0 +1,27 @@
+.custom-placeholder::-webkit-input-placeholder {
+    color: white;
+}
+
+.custom-placeholder::-moz-placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.custom-placeholder:-ms-input-placeholder {
+    color: white;
+}
+
+.custom-placeholder:-moz-placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.tabback {
+    background: none !important;
+    color: white !important;
+}
+
+.tabhed {
+    background-color: #090b13 !important;
+    color: white !important;
+}

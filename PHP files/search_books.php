@@ -8,13 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../StyleSheet/admin.css">
     <!-- SweetAlert CDN -->
 
 
 </head>
 
-<body>
+<body style="background:url('../images/home-background.png');" class="text-light">
 
 
     <?php
@@ -36,38 +36,46 @@
         if (mysqli_num_rows($result) > 0) {
 
     ?>
-            <hr>
-            <h4 class="text-center">Book Details</h4>
-            <table class="table table-bordered mt-4">
-                <tr>
-                    <th>No</th>
-                    <th style="width: 130px;">ISBN</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Publication_Date</th>
-                    <th style="width: 100px;">Author</th>
-                    <th>Review</th>
-                </tr>
-                <?php
-                $rowNumber = 1;
-                // Use a while loop to iterate over the result and display each row
-                while ($row = mysqli_fetch_assoc($result)) {
-                ?>
-                    <tr>
-                        <td><?php echo $rowNumber++; ?></td>
-                        <td><?php echo $row["ISBN"]; ?></td>
-                        <td><?php echo $row["Title"]; ?></td>
-                        <td><?php echo $row["Categories"]; ?></td>
-                        <td><?php echo $row["Publication_Date"]; ?></td>
-                        <td><?php echo $row["Author"]; ?></td>
-                        <td><?php echo $row["Review"]; ?></td>
-                    </tr>
-                <?php
-                }
-                ?>
-            </table>
-            <!-- Back Button -->
-            <a href="./Admin.php" class="btn btn-primary mt-3" style="width:100%">Back To Admin Panel</a>
+            <div class="container mt-5">
+                <h1 class="text-center" style="font-size: 3rem; font-weight: bold;">Book Details</h1>
+                <hr>
+                <br>
+                <div style="max-height: 700px; overflow-y: scroll;">
+                    <table class="table table-bordered mt-4">
+                        <thead style=" position: sticky; top: -1px; z-index: 1;">
+                            <tr>
+                                <th class="tabhed">No</th>
+                                <th class="tabhed" style="width: 130px;">ISBN</th>
+                                <th class="tabhed">Title</th>
+                                <th class="tabhed">Category</th>
+                                <th class="tabhed">Publication_Date</th>
+                                <th class="tabhed" style="width: 100px;">Author</th>
+                                <th class="tabhed">Review</th>
+                            </tr>
+                        </thead>
+
+                        <?php
+                        $rowNumber = 1;
+                        // Use a while loop to iterate over the result and display each row
+                        while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                            <tr>
+                                <td class="tabback"><?php echo $rowNumber++; ?></td>
+                                <td class="tabback"><?php echo $row["ISBN"]; ?></td>
+                                <td class="tabback"><?php echo $row["Title"]; ?></td>
+                                <td class="tabback"><?php echo $row["Categories"]; ?></td>
+                                <td class="tabback"><?php echo $row["Publication_Date"]; ?></td>
+                                <td class="tabback"><?php echo $row["Author"]; ?></td>
+                                <td class="tabback"><?php echo $row["Review"]; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div>
+                <!-- Back Button -->
+                <a href="./Admin.php" class="btn btn-primary mt-3" style="width:100%; margin-bottom: 20px;">Back To Admin Panel</a>
+            </div>
     <?php
         } else {
             // No results found

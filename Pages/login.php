@@ -18,13 +18,6 @@
 </head>
 
 <body>
-    <?php
-    if (isset($_GET['error'])) {
-        if ($_GET['error'] == 5) {
-            echo 'Invalid password or email';
-        } 
-    }
-    ?>
     <script src="/JS File/About_us.js"></script>
     <!-- bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -43,8 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../Pages/Home.php"><i
-                                class="fa-solid fa-house  icoon"></i>Home</a>
+                        <a class="nav-link active" aria-current="page" href="../Pages/Home.php"><i class="fa-solid fa-house  icoon"></i>Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="../Pages/About_us.php"><i class="fa-solid fa-hands-bound icoon"></i>About Us</a>
@@ -53,18 +45,18 @@
                         <a class="nav-link active" href="../Pages/Categories.php"><i class="fa-solid fa-book icoon"></i>Categories</a>
                     </li>
                     <!-- <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-rectangle-history-circle-plus"></i>
-                  Categories
-                </a>
-                        <ul class="dropdown-menu bg-color ">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> -->
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-rectangle-history-circle-plus"></i>
+                      Categories
+                    </a>
+                            <ul class="dropdown-menu bg-color ">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li> -->
                     <li class="nav-item ">
                         <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                     </li>
@@ -75,8 +67,7 @@
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-but">
-                        <a class="btn btn-outline-dark glow-button button-87 " href="../Pages/login.php"><i
-                                class="fa-solid fa-user icoon"></i>Login</a>
+                        <a class="btn btn-outline-dark glow-button button-87 " href="../Pages/login.php"><i class="fa-solid fa-user icoon"></i>Login</a>
                     </li>
                 </ul>
             </div>
@@ -98,7 +89,6 @@
         </div>
         <!-- form  -->
         <div class="formm" style="max-width: 28rem; width: 100%">
-        <form action="login_process.php" method="POST">
             <div class="shadow rounded p-3 input-group-lg">
                 <h1 class="text-center">Log In</h1>
                 <div class="form-floating my-3">
@@ -119,10 +109,21 @@
                 </a>
                 <!-- create from modal -->
                 <!-- Modal -->
-</form>
-<form action="process.php" method="POST">
-           
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <?php
+                if (isset($_GET['error'])) {
+                    if ($_GET['error'] == 1) {
+                        echo "<P style='colour:#FF0000,text-align:center;'>Please submit the form through POST method</p>";
+                    } else if ($_GET['error'] == 2) {
+                        echo "<P style='colour:#FF0000,text-align:center;'>Please submit the form through submit button</p>";
+                    } else if ($_GET['error'] == 3) {
+                        echo "<P style='colour:#fff,text-align:center;'>Please fill all the fields</p>";
+                    } else if ($_GET['error'] == 4) {
+                        echo 'Please enter a valid email';
+                    }
+                }
+                ?>
+
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content poppp text-light">
                             <div class="modal-header">
@@ -134,104 +135,106 @@
                                 </div>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <input type="text" name="" id="" class="form-control" placeholder="first name" />
-                                    </div>
-                                    <div class="col">
-                                        <input type="text" name="" id="" class="form-control" placeholder="last name" />
-                                    </div>
-                                </div>
-                                <input type="email" name="" class="form-control my-3" placeholder="Email" id="" />
-                                <input type="password" name="" class="form-control my-3" placeholder="password" id="" />
-                                <input type="password" name="" class="form-control my-3" placeholder=" Conform password" id="" />
-                                <div class="row my-3">
-                                    <span class="text-muted fs-7 heddd">
-                                        Date of Birth
-                                        <i type="button" class="fa-solid fa-circle-question" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover"></i>
-                                    </span>
-                                    <div class="col">
-                                        <select name="" id="" class="form-select">
-                                            <?php
-                                            $startYear = 1950;
-                                            $endYear = 2022;
-
-                                            for ($i = 1; $i <= 72; $i++) {
-                                                $year = $startYear + $i - 1;
-                                                echo '<option value="' . $i . '">' . $year . '</option><br>';
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div class="col">
-                                        <select name="" id="" class="form-select">
-                                            <option value="1">January</option><br>
-                                            <option value="2">February</option><br>
-                                            <option value="3">March</option><br>
-                                            <option value="4">April</option><br>
-                                            <option value="5">May</option><br>
-                                            <option value="6">June</option><br>
-                                            <option value="7">July</option><br>
-                                            <option value="8">August</option><br>
-                                            <option value="9">September</option><br>
-                                            <option value="10">October</option><br>
-                                            <option value="11">Novermber</option><br>
-                                            <option value="12">December</option><br>
-                                        </select>
-                                    </div>
-                                    <div class="col">
-                                        <select name="" id="" class="form-select">
-                                            <?php
-                                            for ($i = 1; $i <= 31; $i++) {
-                                                echo '<option value="' . $i . '">' . $i . '</option>';
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row my-3 jus">
-                                    <span class="text-muted fs-7 heddd">
-                                        Gender
-                                        <i type="button" class="fa-solid fa-circle-question" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover"></i>
-                                    </span>
-                                    <div class="col">
-                                        <div class="">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Male
-                                            </label>
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                            <form action="process.php" method="POST">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" name="firstName" id="firstName" class="form-control" placeholder="first name" />
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" name="lastName" id="lastName" class="form-control" placeholder="last name" />
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Female
-                                            </label>
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                    <input type="text" name="email" class="form-control my-3" placeholder="Email" id="email" />
+                                    <input type="password" name="password" class="form-control my-3" placeholder="password" id="password" />
+                                    <input type="password" name="conformPassword" class="form-control my-3" placeholder=" Conform password" id="conformPassword" />
+                                    <div class="row my-3">
+                                        <span class="text-muted fs-7 heddd">
+                                            Date of Birth
+                                            <i type="button" class="fa-solid fa-circle-question" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover"></i>
+                                        </span>
+                                        <div class="col">
+                                            <select name="" id="" class="form-select">
+                                                <?php
+                                                $startYear = 1950;
+                                                $endYear = 2022;
+
+                                                for ($i = 1; $i <= 72; $i++) {
+                                                    $year = $startYear + $i - 1;
+                                                    echo '<option value="' . $i . '">' . $year . '</option><br>';
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select name="" id="" class="form-select">
+                                                <option value="1">January</option><br>
+                                                <option value="2">February</option><br>
+                                                <option value="3">March</option><br>
+                                                <option value="4">April</option><br>
+                                                <option value="5">May</option><br>
+                                                <option value="6">June</option><br>
+                                                <option value="7">July</option><br>
+                                                <option value="8">August</option><br>
+                                                <option value="9">September</option><br>
+                                                <option value="10">October</option><br>
+                                                <option value="11">Novermber</option><br>
+                                                <option value="12">December</option><br>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select name="" id="" class="form-select">
+                                                <?php
+                                                for ($i = 1; $i <= 31; $i++) {
+                                                    echo '<option value="' . $i . '">' . $i . '</option>';
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
-                                   
-                                </div>
+                                    <div class="row my-3 jus">
+                                        <span class="text-muted fs-7 heddd">
+                                            Gender
+                                            <i type="button" class="fa-solid fa-circle-question" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover"></i>
+                                        </span>
+                                        <div class="col">
+                                            <div class="">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Male
+                                                </label>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="">
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Female
+                                                </label>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                            </div>
+                                        </div>
 
-                                <div class="d-none" id="selectGender">
-                                    <select name="" id="" class="form-select">
-                                        <option value="1">one</option>
-                                        <option value="2">two</option>
-                                        <option value="3">three</option>
-                                    </select>
-                                    <div class="my-3">
-                                        <span class="text-muted">Your pronoun is visible to everyone.</span>
-                                        <input type="text" name="" id="" class="form-control" placeholder="Gender (optional)" />
+                                    </div>
+
+                                    <div class="d-none" id="selectGender">
+                                        <select name="" id="" class="form-select">
+                                            <option value="1">one</option>
+                                            <option value="2">two</option>
+
+                                        </select>
+                                        <div class="my-3">
+                                            <span class="text-muted">Your pronoun is visible to everyone.</span>
+                                            <input type="text" name="" id="" class="form-control" placeholder="Gender (optional)" />
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="submit" name="submit" id="submit" class="btn btn-outline-primary my-3" data-bs-dismiss="modal">
+                                            Sign Up
+                                        </button>
                                     </div>
                                 </div>
-
-                                <div class="text-center">
-                                    <button type="button" class="btn btn-outline-primary my-3" data-bs-dismiss="modal">
-                                        Sign Up
-                                    </button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
 
                     </div>
@@ -244,7 +247,7 @@
                     </button>
                 </div>
             </div>
-                                        </form>
+
         </div>
     </div>
 
@@ -284,14 +287,13 @@
                 <h4>Newsletter</h4>
                 <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
                 <p>
-                    <div class="input-group ">
-                        <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
-                        <span class="input-group-btn ">
-                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i
-                                class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
+                <div class="input-group ">
+                    <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
+                    <span class="input-group-btn ">
+                        <button class="btn btn-block btn-lg glow-button btn-dark " type="submit "><i class="fa-solid fa-envelope fa-beat fa-xl "></i></button>
                     </span>
-                    </div>
-                    <!-- /input-group -->
+                </div>
+                <!-- /input-group -->
                 </p>
             </div>
         </div>

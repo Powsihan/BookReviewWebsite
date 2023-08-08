@@ -1,7 +1,7 @@
     /* body css */
     
     body {
-        background: url("/images/home-background.png") center center / cover no-repeat fixed;
+        background: url("../images/home-background.png") center center / cover no-repeat fixed;
         content: "";
         position: absolute;
         top: 0;
@@ -339,7 +339,7 @@
     }
     
     .counts .image {
-        background: url("/images/book.jpg") center center no-repeat;
+        background: url("../images/book.jpg") center center no-repeat;
         background-size: cover;
         min-height: 400px;
         border-radius: 4px;

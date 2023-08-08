@@ -29,7 +29,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-color navvr fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand logog" href="../Pages/Home.php"><img src="/images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
+                <a class="navbar-brand logog" href="../Pages/Home.php"><img src="../images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -83,7 +83,7 @@
         <div class="container d-flex flex-column flex-lg-row justify-content-evenly mt-5 pt-5">
             <!-- heading -->
             <div class="text-center text-lg-center mt-lg-5 pt-lg-5">
-                <img src="../images/logo.png" width="400 px" height="216px" alt="" />
+                <img src="..../images/logo.png" width="400 px" height="216px" alt="" />
                 <!-- check it-->
                 <p class="w-75 mx-auto ma-lg-0 fs-4">
 
@@ -258,7 +258,7 @@
         <footer class="footer-bs ">
             <div class="row ">
                 <div class="col-md-3 footer-brand animated fadeInLeft ">
-                    <img src="/images/logo.png " alt="logo " style="height:70px; width: 110px; ">
+                    <img src="../images/logo.png " alt="logo " style="height:70px; width: 110px; ">
                     <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
                     <p>© 2007 ReadO, All rights reserved</p>
                 </div>

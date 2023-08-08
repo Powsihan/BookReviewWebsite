@@ -18,7 +18,7 @@
     <title>About_us | ReadO</title>
 </head>
 
-<body>
+<body style=" background: url('../images/home-background.png') center center / cover no-repeat fixed !important;">>
     <script src="/JS File/About_us.js"></script>
     <!-- bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-color navvr fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand logog" href="../Pages/Home.php"><img src="/images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
+            <a class="navbar-brand logog" href="../Pages/Home.php"><img src="../images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -76,7 +76,7 @@
 
             <div class="row">
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                    <img src="/images/logo.png" class=" img-fluid " alt=" ">
+                    <img src="../images/logo.png" class=" img-fluid " alt=" ">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content " data-aos="fade-right " data-aos-delay="100 ">
                     <p class="fst-italic ">
@@ -178,7 +178,7 @@
             </div>
 
             <div class="row no-gutters">
-                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
+                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100" style="background: url('../images/book.jpg') center center no-repeat;"></div>
                 <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
                     <div class="content d-flex flex-column justify-content-center">
                         <h3>Voluptatem dignissimos provident quasi</h3>
@@ -241,7 +241,7 @@
                 <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img">
-                            <img src="/images/Powsi.jpg" class="img-fluid" alt="">
+                            <img src="../images/Powsi.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <a href="# "><i class="fa-brands fa-facebook"></i></a>
                                 <a href="# "><i class="fa-brands fa-twitter"></i></a>
@@ -259,7 +259,7 @@
                 <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="/images/tharushi.jpg" class="img-fluid" alt="">
+                            <img src="../images/tharushi.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <a href="# "><i class="fa-brands fa-facebook"></i></a>
                                 <a href="# "><i class="fa-brands fa-twitter"></i></a>
@@ -277,7 +277,7 @@
                 <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="300">
                         <div class="member-img">
-                            <img src="/images/upeksha1.jpg" class="img-fluid" alt="">
+                            <img src="../images/upeksha1.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <a href="# "><i class="fa-brands fa-facebook"></i></a>
                                 <a href="# "><i class="fa-brands fa-twitter"></i></a>
@@ -295,7 +295,7 @@
                 <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="400">
                         <div class="member-img">
-                            <img src="/images/dinithi.jpg" class="img-fluid" alt="">
+                            <img src="../images/dinithi.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <a href="# "><i class="fa-brands fa-facebook"></i></a>
                                 <a href="# "><i class="fa-brands fa-twitter"></i></a>
@@ -312,7 +312,7 @@
                 <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="400">
                         <div class="member-img">
-                            <img src="/images/nuwaifa.jpg" class="img-fluid" alt="">
+                            <img src="../images/nuwaifa.jpg" class="img-fluid" alt="">
                             <div class="social">
                                 <a href="# "><i class="fa-brands fa-facebook"></i></a>
                                 <a href="# "><i class="fa-brands fa-twitter"></i></a>
@@ -337,7 +337,7 @@
     <footer class="footer-bs ">
         <div class="row ">
             <div class="col-md-3 footer-brand animated fadeInLeft ">
-                <img src="/images/logo.png " alt="logo " style="height:70px; width: 110px; ">
+                <img src="../images/logo.png " alt="logo " style="height:70px; width: 110px; ">
                 <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
                 <p>© 2007 ReadO, All rights reserved</p>
             </div>

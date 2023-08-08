@@ -13,7 +13,7 @@
 
 </head>
 
-<body style="background:url('../images/home-background.png');" class="text-light">
+<body style="background:url('..../images/home-background.png');" class="text-light">
     <div class="container mt-5">
         <h1 class="text-center" style="font-size: 3rem; font-weight: bold;">Update Book</h1>
         <hr>

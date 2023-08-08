@@ -16,7 +16,7 @@
     <title>Contact_us | ReadO</title>
 </head>
 
-<body>\
+<body style=" background: url('../images/home-background.png') center center / cover no-repeat fixed !important;">>\
 
     <!-- bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-color navvr fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand logog" href="../Pages/Home.php"><img src="/images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
+            <a class="navbar-brand logog" href="../Pages/Home.php"><img src="../images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -152,7 +152,7 @@
     <footer class="footer-bs ">
         <div class="row ">
             <div class="col-md-3 footer-brand animated fadeInLeft ">
-                <img src="/images/logo.png " alt="logo " style="height:70px; width: 110px; ">
+                <img src="../images/logo.png " alt="logo " style="height:70px; width: 110px; ">
                 <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
                 <p>© 2007 ReadO, All rights reserved</p>
             </div>

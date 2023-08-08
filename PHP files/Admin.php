@@ -13,7 +13,7 @@
 
 </head>
 
-<body style="background:url('..../images/home-background.png');" class="text-light">
+<body style="background:url('../images/home-background.png');" class="text-light">
     <div class="container mt-5 text-light">
         <h1 class="text-center" style="font-weight: bold; font-size: 4rem;">Admin Panel</h1>
         <a href="./AdminLogin.html" class="btn btn-danger mt-3" style="width:10%; margin-left: 1000px;">LogOut</a>

@@ -14,7 +14,7 @@
 
 </head>
 
-<body style="background:url('..../images/home-background.png');" class="text-light">
+<body style="background:url('../images/home-background.png');" class="text-light">
 
 
     <?php

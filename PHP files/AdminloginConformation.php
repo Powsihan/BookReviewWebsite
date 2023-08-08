@@ -31,7 +31,6 @@ if ($result->num_rows == 1) {
     alert('Invalid username or password.');
     window.location='AdminLogin.html';
     </script>";
-   
 }
 
 $conn->close();

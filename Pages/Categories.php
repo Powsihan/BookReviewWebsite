@@ -27,8 +27,6 @@
 <body style=" background: url('../images/home-background.png') center center / cover no-repeat fixed !important;"> oncontextmenu='return false' class='snippet-body'>
     <!-- bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
-    <!-- bootstrap link  end -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -68,7 +66,9 @@
     </nav>
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
+<!-- Categories part -->
 
+<!-- Historical Category -->
     <section style="margin-top: 150px;">
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -88,7 +88,7 @@
                         <div class="slide">
                             <div class="carousel-inner">
                                 <?php
-                                // Assuming you have established a database connection
+                                //  established a database connection
                                 $connection = mysqli_connect("localhost", "root", "", "bookreview");
 
                                 // Function to get all book details from the database
@@ -118,9 +118,8 @@
                                 ?>
 
                                         <!-- card -->
-                                        <div class="col-md-3"> <!-- Use appropriate column class to fit 4 cards in one row -->
+                                        <div class="col-md-3"> 
                                             <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
                                                 <div class="img-box">
                                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book['Image']); ?>" alt="">
                                                 </div>
@@ -141,14 +140,13 @@
                                 <?php
                                         // If the counter is a multiple of 4, close the carousel item
                                         if ($counter % 4 === 3 || $counter === count($allBooks) - 1) {
-                                            echo '</div></div>'; // Close the row and carousel item container
+                                            echo '</div></div>'; 
                                         }
 
                                         $counter++;
                                     }
                                 } else {
                                     // No books found
-                                    // Display a message or handle the case when no books are available
                                 }
                                 ?>
                             </div>
@@ -159,8 +157,9 @@
         </div>
         </div>
     </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-
+<!-- Horror Category -->
     <section style="margin-top: 150px;">
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -180,7 +179,7 @@
                         <div class="slide">
                             <div class="carousel-inner">
                                 <?php
-                                // Assuming you have established a database connection
+                                //  established a database connection
                                 $connection = mysqli_connect("localhost", "root", "", "bookreview");
 
                                 // Function to get all book details from the database
@@ -210,9 +209,8 @@
                                 ?>
 
                                         <!-- card -->
-                                        <div class="col-md-3"> <!-- Use appropriate column class to fit 4 cards in one row -->
+                                        <div class="col-md-3"> 
                                             <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
                                                 <div class="img-box">
                                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book['Image']); ?>" alt="">
                                                 </div>
@@ -233,14 +231,13 @@
                                 <?php
                                         // If the counter is a multiple of 4, close the carousel item
                                         if ($counter % 4 === 3 || $counter === count($allBooks) - 1) {
-                                            echo '</div></div>'; // Close the row and carousel item container
+                                            echo '</div></div>'; 
                                         }
 
                                         $counter++;
                                     }
                                 } else {
                                     // No books found
-                                    // Display a message or handle the case when no books are available
                                 }
                                 ?>
                             </div>
@@ -251,8 +248,9 @@
         </div>
         </div>
     </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-   
+  <!-- Love Category --> 
     <section style="margin-top: 150px;">
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -272,7 +270,7 @@
                         <div class="slide">
                             <div class="carousel-inner">
                                 <?php
-                                // Assuming you have established a database connection
+                                // established a database connection
                                 $connection = mysqli_connect("localhost", "root", "", "bookreview");
 
                                 // Function to get all book details from the database
@@ -302,9 +300,8 @@
                                 ?>
 
                                         <!-- card -->
-                                        <div class="col-md-3"> <!-- Use appropriate column class to fit 4 cards in one row -->
+                                        <div class="col-md-3"> 
                                             <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
                                                 <div class="img-box">
                                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book['Image']); ?>" alt="">
                                                 </div>
@@ -325,14 +322,13 @@
                                 <?php
                                         // If the counter is a multiple of 4, close the carousel item
                                         if ($counter % 4 === 3 || $counter === count($allBooks) - 1) {
-                                            echo '</div></div>'; // Close the row and carousel item container
+                                            echo '</div></div>';
                                         }
 
                                         $counter++;
                                     }
                                 } else {
-                                    // No books found
-                                    // Display a message or handle the case when no books are available
+                                    // No books found 
                                 }
                                 ?>
                             </div>
@@ -343,8 +339,9 @@
         </div>
         </div>
     </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-
+<!-- Fiction Category --> 
     <section style="margin-top: 150px;">
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -364,7 +361,7 @@
                         <div class="slide">
                             <div class="carousel-inner">
                                 <?php
-                                // Assuming you have established a database connection
+                                //established a database connection
                                 $connection = mysqli_connect("localhost", "root", "", "bookreview");
 
                                 // Function to get all book details from the database
@@ -394,9 +391,8 @@
                                 ?>
 
                                         <!-- card -->
-                                        <div class="col-md-3"> <!-- Use appropriate column class to fit 4 cards in one row -->
+                                        <div class="col-md-3"> 
                                             <div class="thumb-wrapper">
-                                                <!-- <span class="wish-icon"><i class="fa fa-heart-o"></i></span> -->
                                                 <div class="img-box">
                                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($book['Image']); ?>" alt="">
                                                 </div>
@@ -417,14 +413,13 @@
                                 <?php
                                         // If the counter is a multiple of 4, close the carousel item
                                         if ($counter % 4 === 3 || $counter === count($allBooks) - 1) {
-                                            echo '</div></div>'; // Close the row and carousel item container
+                                            echo '</div></div>'; 
                                         }
 
                                         $counter++;
                                     }
                                 } else {
                                     // No books found
-                                    // Display a message or handle the case when no books are available
                                 }
                                 ?>
                             </div>
@@ -435,6 +430,7 @@
         </div>
         </div>
     </section>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     
 

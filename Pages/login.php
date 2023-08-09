@@ -305,7 +305,6 @@
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-    <script src="/JS File/About_us.js"></script>
     <script>
         document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
             event.preventDefault();

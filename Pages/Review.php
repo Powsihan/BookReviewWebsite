@@ -1,15 +1,15 @@
 <?php
-// Assuming you have established a database connection
+// established a database connection
 $connection = mysqli_connect("localhost", "root", "", "bookreview");
 
-// Function to get book details from the database by ISBN
+// Function to get book details from the database by Title
 function getBookDetailsByISBN($connection, $isbn) {
     $query = "SELECT * FROM book WHERE Title = ?";
     
     // Create a prepared statement
     $stmt = mysqli_prepare($connection, $query);
     
-    // Bind the ISBN value to the prepared statement
+    // Bind the Title value to the prepared statement
     mysqli_stmt_bind_param($stmt, "s", $isbn);
     
     // Execute the prepared statement
@@ -25,9 +25,13 @@ function getBookDetailsByISBN($connection, $isbn) {
         mysqli_stmt_close($stmt);
         return $row;
     } else {
-        // No data found for the given ISBN
+        // No data found for the given Title
         // Close the prepared statement
         mysqli_stmt_close($stmt);
+        echo "<script>
+            alert('Book Not Found!');
+            window.location = 'Home.php'; // Redirect to the desired page after successful insertion
+          </script>";
         return false;
     }
 }
@@ -37,11 +41,11 @@ if (isset($_GET['isbn'])) {
     // Get the ISBN value from the URL
     $isbn = $_GET['isbn'];
 
-    // Get book details by ISBN
+    // Get book details by Title
     $bookDetails = getBookDetailsByISBN($connection, $isbn);
 } else {
     // Redirect to a page or display an error message if no ISBN is provided in the URL
-    header("Location: /error_page.php"); // Replace "/error_page.php" with the desired error page URL
+    header("Location: ./Home.php"); // Replace "/error_page.php" with the desired error page URL
     exit;
 }
 
@@ -147,7 +151,6 @@ if (isset($_GET['isbn'])) {
                         <p><?php echo $bookDetails['Review']; ?></p>
                         <div class="revbtn">
                             <a href="#" class="btn btn-primary">Buy</a>
-                            <!-- <a href="#" class="btn btn-primary" style="width: 90px;">Comment</a> -->
                         </div>
                     </div>
                 </div>
@@ -211,8 +214,6 @@ if (isset($_GET['isbn'])) {
 
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-
-    <script src="/JS File/About_us.js"></script>
     <script>
         document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
             event.preventDefault();

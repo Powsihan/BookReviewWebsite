@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-// Replace these with your actual database credentials
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -25,7 +23,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
     $_SESSION['username'] = $username;
-    header("Location: Admin.php"); // Redirect to a dashboard or home page
+    header("Location: Admin.php"); // Redirect to a Admin Panel
 } else {
     echo "<script>
     alert('Invalid username or password.');

@@ -18,6 +18,7 @@
         <h1 class="text-center" style="font-weight: bold; font-size: 4rem;">Admin Panel</h1>
         <a href="./AdminLogin.html" class="btn btn-danger mt-3" style="width:10%; margin-left: 1000px;">LogOut</a>
         <hr>
+
         <!-- Search Book Form -->
         <h4 class="text-center" style="font-weight: bold;">Search Books</h4>
         <form action="search_books.php" method="post" class="mt-4">
@@ -30,7 +31,7 @@
         <br><br>
         <hr>
         <h4 class="text-center" style="font-weight: bold;">Book Add</h4>
-        <!-- Once the form is submitted, all the form data is forwarded to InsertBooks.php -->
+        <!-- Book ADD Section -->
         <form action="InsertBooks.php" method="post">
 
             <table class="table table-bordered mt-4 ">
@@ -86,6 +87,7 @@
 
     <h4 class="text-center" style="font-weight: bold;">Update Books</h4>
     <div class="container mt-5 text-light">
+        <!-- Book Update Section -->
     <form action="update_book.php" method="post" class="mt-4">
         <div class="input-group">
             <input type="text" name="search" class="form-control bg-dark text-light custom-placeholder" placeholder="Search for the book by ISBN whose is going to update">
@@ -96,6 +98,7 @@
     <br><br>
     <hr>
     </div>
+    <!-- Book Display Section -->
     <h4 class="text-center" style="font-weight: bold;"> All Book Details</h4>
 
     <div class="container mt-5">

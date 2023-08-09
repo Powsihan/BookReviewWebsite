@@ -115,7 +115,7 @@
 
                 <div class="col-lg-8 mt-5 mt-lg-0">
 
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form action="contact.php" method="post" role="form" class="php-email-form">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <input type="text" name="name" class="me-2 bg-dark text-light glowing-border w-200 siz2" id="name" placeholder="Your Name" required>
@@ -135,7 +135,7 @@
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
-                        <div class="text-center"><button class="btn btn-outline-dark glow-button button-87" type="submit">Send Message<i class="fa-solid fa-envelope fa-xl icoon "></i></button></div>
+                        <div class="text-center"><button class="btn btn-outline-dark glow-button button-87" name="submit" type="submit">Send Message<i class="fa-solid fa-envelope fa-xl icoon "></i></button></div>
                         <!-- <a class="btn btn-outline-dark glow-button buutt " href="#">Send Message <i
                             class="fa-solid fa-envelope icoon"></i></a> -->
                     </form>
@@ -182,7 +182,7 @@
             </div>
             <div class="col-md-3 footer-ns animated fadeInRight ">
                 <h4>Newsletter</h4>
-                <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+                <p>A rover wearing a fuzzy suit doesn't alarm the real penguins</p>
                 <p>
                 <div class="input-group ">
                     <input class="form-control me-2 bg-dark text-light glowing-border w-200 siz " type="search " placeholder="Type here..." required aria-label="Search ">
@@ -200,7 +200,7 @@
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-    <script src="/JS File/Contact_us.js"></script>
+    <!-- <script src="/JS File/Contact_us.js"></script> -->
     <script>
         document.querySelector('form[role="search"]').addEventListener('submit', function(event) {
             event.preventDefault();

@@ -3,8 +3,6 @@ use classes\Register;
 
 require_once 'classes\Register.php';
 
-
-
 if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
     $email = strip_tags($_POST['email']);
     $password = strip_tags($_POST['pwd']);
@@ -16,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
     if ($register->login($email, $password)) {
        
          
-            header("Location: Categories.php");
+            header("Location: Home.php");
         } 
         exit();
     } else {
@@ -24,7 +22,3 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
         header("Location: login.php?error=5");
         exit();
     }
-else {
-    header("Location: login.php?error=1");
-    exit();
-}

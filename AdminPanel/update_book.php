@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../StyleSheet/admin.css">
-
 </head>
 
 <body style="background:url('../images/home-background.png');" class="text-light">
@@ -23,7 +22,7 @@
             $search = $_POST["search"];
             $db = mysqli_connect("localhost", "root", "", "bookreview");
 
-            // Check if the connection was successful
+            // Check the connection 
             if (mysqli_connect_errno()) {
                 die("Database connection failed: " . mysqli_connect_error());
             }

@@ -9,18 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../StyleSheet/admin.css">
-    <!-- SweetAlert CDN -->
-
-
 </head>
 
 <body style="background:url('../images/home-background.png');" class="text-light">
-
-
     <?php
     $db = mysqli_connect("localhost", "root", "", "bookreview");
 
-    // Check if the connection was successful
+    // Check the connection
     if (mysqli_connect_errno()) {
         die("Database connection failed: " . mysqli_connect_error());
     }
@@ -28,7 +23,6 @@
     if (isset($_POST['search'])) {
         $searchValue = $_POST['search'];
 
-        // Prepare the query to search for books by title or author
         $query = "SELECT * FROM book WHERE Title LIKE '%$searchValue%' OR Categories LIKE '%$searchValue%' OR Author LIKE '%$searchValue%' OR ISBN LIKE '%$searchValue%'";
         $result = mysqli_query($db, $query);
 

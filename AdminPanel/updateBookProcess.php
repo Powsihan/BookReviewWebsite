@@ -3,13 +3,13 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db = mysqli_connect("localhost", "root", "", "bookreview");
 
-    // Check if the connection was successful
+    // Check the connection 
     if (mysqli_connect_errno()) {
         die("Database connection failed: " . mysqli_connect_error());
     }
 
-    if (isset($_POST["update"])) {
-        // Update book details in the database
+    if (isset($_POST["update"])) {        //update
+        //get details from book update form
         $isbn = $_POST["isbn"];
         $title = $_POST["title"];
         $publication = $_POST["publication"];
@@ -17,13 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $review = $_POST["review"];
         $categories = $_POST["categories"];
 
-        // Validate and sanitize the data if needed (e.g., using mysqli_real_escape_string() or prepared statements).
-
-        // Update book details in the database using the provided ISBN
         $update_query = "UPDATE book SET Title='$title', Publication_Date='$publication', Author='$author', Review='$review', Categories='$categories' WHERE ISBN='$isbn'";
 
         if (mysqli_query($db, $update_query)) {
-            // Redirect back to admin.php after updating
             echo "<script>
             alert('Book Updated Successfully!');
             window.location = 'Admin.php'; // Redirect to the desired page after successful insertion
@@ -32,11 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error updating book details: " . mysqli_error($db);
         }
-    } elseif (isset($_POST["delete"])) {
-        // Delete book from the database
+    } elseif (isset($_POST["delete"])) {         //delete
+        
         $isbn = $_POST["isbn"];
 
-        // Delete book from the database using the provided ISBN
         $delete_query = "DELETE FROM book WHERE ISBN='$isbn'";
 
         if (mysqli_query($db, $delete_query)) {

@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Add</title>
+    <title>Admin | ReadO</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../StyleSheet/admin.css">
-    <!-- SweetAlert CDN -->
-
 </head>
 
 <body style="background:url('../images/home-background.png');" class="text-light">
@@ -31,6 +29,7 @@
         <br><br>
         <hr>
         <h4 class="text-center" style="font-weight: bold;">Book Add</h4>
+
         <!-- Book ADD Section -->
         <form action="InsertBooks.php" method="post">
 
@@ -87,6 +86,8 @@
 
     <h4 class="text-center" style="font-weight: bold;">Update Books</h4>
     <div class="container mt-5 text-light">
+
+
         <!-- Book Update Section -->
     <form action="update_book.php" method="post" class="mt-4">
         <div class="input-group">
@@ -98,6 +99,8 @@
     <br><br>
     <hr>
     </div>
+
+
     <!-- Book Display Section -->
     <h4 class="text-center" style="font-weight: bold;"> All Book Details</h4>
 

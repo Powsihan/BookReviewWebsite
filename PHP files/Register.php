@@ -27,7 +27,7 @@ class Register {
         $dbcon = new DbConnector();
         $con = $dbcon->getConnection();
 
-        $query = "SERT INTO User(Fname, Lname,Email,Password,Conform_password)VALUES(?,?,?,?,?)";
+        $query = "INSERT INTO User(Fname, Lname,Email,Password,Conform_password)VALUES(?,?,?,?,?)";
 
         try {
             $pstmt = $con->prepare($query);
@@ -47,6 +47,26 @@ class Register {
         } catch (PDOException $e) {
             die("Connection failed: ") . $e->getMessage();
         }
+    }
+    public function login($email, $password) {
+        $dbcon = new DbConnector();
+        $con = $dbcon->getConnection();
+
+       
+        $query = "SELECT * FROM User WHERE email = ?";
+        $stmt = $con->prepare($query);
+        $stmt->bindValue(1, $email);
+        $stmt->execute();
+        $User = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ( $User && cpassword($password, $User['Password'])) {
+         
+            return 'User';
+        }
+
+        
+        // Invalid login
+        return false;
     }
 
 }

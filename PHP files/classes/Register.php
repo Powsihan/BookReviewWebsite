@@ -31,7 +31,7 @@ class Register {
 
             
 
-            $query = "INSERT INTO reader(firstName, lastName, email, password, conformPassword) VALUES(?, ?, ?, ?, ?);";
+            $query = "INSERT INTO reader(firstname, lastname, email, password, conformPassword) VALUES(?, ?, ?, ?, ?);";
             $pstmt = $con->prepare($query);
             $pstmt->bindValue(1, $this->firstName);
             $pstmt->bindValue(2, $this->lastName);
@@ -52,3 +52,5 @@ class Register {
     }
 
 }
+
+

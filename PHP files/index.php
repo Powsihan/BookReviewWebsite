@@ -9,7 +9,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <!-- CSS stylesheet -->
-        <link rel="stylesheet" href="WAD LOGIN.css">
+        <link rel="stylesheet" href="../StyleSheet/login.css">
         <!-- ------------------------------------------------------------------->
         <!-- font awesome link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -29,7 +29,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-color navvr fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand logog" href="../Pages/Home.php"><img src="../images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
+                <a class="navbar-brand logog" href="../Pages/Home.php"><img src="../Images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -45,19 +45,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="../Pages/Categories.php"><i class="fa-solid fa-book icoon"></i>Categories</a>
                         </li>
-                        <!-- <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-rectangle-history-circle-plus"></i>
-                      Categories
-                    </a>
-                            <ul class="dropdown-menu bg-color ">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li> -->
+                        
                         <li class="nav-item ">
                             <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                         </li>
@@ -83,7 +71,7 @@
         <div class="container d-flex flex-column flex-lg-row justify-content-evenly mt-5 pt-5">
             <!-- heading -->
             <div class="text-center text-lg-center mt-lg-5 pt-lg-5">
-                <img src="..../images/logo.png" width="400 px" height="216px" alt="" />
+                <img src="../Images/logo.png" width="400 px" height="216px" alt="" />
                 <!-- check it-->
                 <p class="w-75 mx-auto ma-lg-0 fs-4">
 
@@ -114,15 +102,15 @@
                     <?php
                     if (isset($_GET['error'])) {
                         if ($_GET['error'] == 1) {
-                            echo "<P style='colour:#FF0000,text-align:center;'>Please submit the form through POST method</p>";
-                         
+                            echo "<button style='colour:#FF0000,text-align:center;'>Please submit the form through POST method</p>";
                         } else if ($_GET['error'] == 2) {
                             echo "<P style='colour:#FF0000,text-align:center;'>Please submit the form through submit button</p>";
                         } else if ($_GET['error'] == 3) {
-                            echo  "<P style='colour:#fff,text-align:center;'>Please fill all the fields</p>" ;
+                            echo "<P style='colour:#fff,text-align:center;'>Please fill all the fields</p>";
                         } else if ($_GET['error'] == 4) {
                             echo 'Please enter a valid email';
                         }
+                        
                     }
                     ?>
 
@@ -142,15 +130,15 @@
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col">
-                                                <input type="text" name="fname" id="fanme" class="form-control" placeholder="first name" />
+                                                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="first name" />
                                             </div>
                                             <div class="col">
-                                                <input type="text" name="lname" id="lname" class="form-control" placeholder="last name" />
+                                                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="last name" />
                                             </div>
                                         </div>
                                         <input type="text" name="email" class="form-control my-3" placeholder="Email" id="email" />
-                                        <input type="password" name="pwd" class="form-control my-3" placeholder="password" id="pwd" />
-                                        <input type="password" name="cpwd" class="form-control my-3" placeholder=" Conform password" id="cpwd" />
+                                        <input type="password" name="password" class="form-control my-3" placeholder="password" id="password" />
+                                        <input type="password" name="conformPassword" class="form-control my-3" placeholder=" Conform password" id="conformPassword" />
                                         <div class="row my-3">
                                             <span class="text-muted fs-7 heddd">
                                                 Date of Birth
@@ -258,7 +246,7 @@
         <footer class="footer-bs ">
             <div class="row ">
                 <div class="col-md-3 footer-brand animated fadeInLeft ">
-                    <img src="../images/logo.png " alt="logo " style="height:70px; width: 110px; ">
+                    <img src="../Images/logo.png" alt="logo " style="height:70px; width: 110px; ">
                     <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
                     <p>© 2007 ReadO, All rights reserved</p>
                 </div>

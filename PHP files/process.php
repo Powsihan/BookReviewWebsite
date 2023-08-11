@@ -2,25 +2,26 @@
 
 use classes\Register;
 
-require_once 'classes\Register.php';
+require_once 'classes\Register.php';    
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST['submit'])) {
-        if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['pwd']) || empty($_POST['cpwd']) || empty($_POST['email'])) {
+        if (empty($_POST['firstName']) || empty($_POST['lastName']) || empty($_POST['password']) || empty($_POST['conformPassword']) || empty($_POST['email'])) {
             header("Location: index.php?error=3");
+      
         } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             header("Location: index.php?error=4");
         } else {
-            $fname = $_POST['fname'];
-            $lname = $_POST['lname'];
+            $firstName = $_POST['firstName'];
+            $lastName = $_POST['lastName'];
 
             $email = $_POST['email'];
-            $password = $_POST['pwd'];
-            $cpassword = $_POST['cpwd'];
+            $password = $_POST['password'];
+            $conformPassword = $_POST['conformPassword'];
 
 
 
-            $register = new Register($fname, $lname, $email, $password, $cpassword);
+            $register = new Register($firstName, $lastName,$email, $password,$conformPassword );
             $register->register();
         }
     } else {
@@ -29,4 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 } else {
     header("Location: index.php?error=1");
 }
+
+
+
+
 

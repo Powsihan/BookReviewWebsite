@@ -18,8 +18,6 @@
     </head>
 
     <body>
-        
-       
         <script src="/JS File/About_us.js"></script>
         <!-- bootstrap link -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -31,7 +29,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-color navvr fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand logog" href="../Pages/Home.php"><img src="./images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
+                <a class="navbar-brand logog" href="../Pages/Home.php"><img src="../Images/logo.png" alt="logo" style="height:50px; width: 80px;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -47,6 +45,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="../Pages/Categories.php"><i class="fa-solid fa-book icoon"></i>Categories</a>
                         </li>
+                        
                         <li class="nav-item ">
                             <a class="nav-link active " href="../Pages/Contact_us.php"><i class="fa-solid fa-headset icoon"></i>Contact Us</a>
                         </li>
@@ -72,48 +71,38 @@
         <div class="container d-flex flex-column flex-lg-row justify-content-evenly mt-5 pt-5">
             <!-- heading -->
             <div class="text-center text-lg-center mt-lg-5 pt-lg-5">
-                <img src="../images/logo.png" width="400 px" height="216px" alt="" />
+                <img src="../Images/logo.png" width="400 px" height="216px" alt="" />
                 <!-- check it-->
                 <p class="w-75 mx-auto ma-lg-0 fs-4">
 
                 </p>
             </div>
             <!-- form  -->
-         
             <div class="formm" style="max-width: 28rem; width: 100%">
-            <form action="loginprocess.php" method="POST">
                 <div class="shadow rounded p-3 input-group-lg">
                     <h1 class="text-center">Log In</h1>
-                    <?php
-                     if(isset($_GET['error'])){?>
-                        <p class="error"><?php echo $_GET['error'];?></p>
-                    <?php } 
-                    ?>   
                     <div class="form-floating my-3">
-                      
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" style="background-color: #F4F4F4" name="email">
-                        <label for="floatingInput">Email </label>
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" style="background-color: #F4F4F4">
+                        <label for="floatingInput">Email address</label>
                     </div>
                     <div class="form-floating my-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" style="background-color: #F4F4F4"name="password">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" style="background-color: #F4F4F4">
                         <label for="floatingPassword">Password</label>
                     </div>
-                        <a href="./Home.php.php">
-                        <button  class="btn btn-primary my-3 w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" id="submit" type="submit" name="submit" value="login">
+                    <a href="./index.php">
+                        <button class="btn btn-primary my-3 w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             login
                         </button>
                     </a>
-                </form>
                     <a href="#" class="text-decoration-none text-center">
                         <p>Forgotten password?</p>
                     </a>
-               
                     <!-- create from modal -->
                     <!-- Modal -->
                     <?php
                     if (isset($_GET['error'])) {
                         if ($_GET['error'] == 1) {
-                            echo "<P style='colour:#FF0000,text-align:center;'>Please submit the form through POST method</p>";
+                            echo "<button style='colour:#FF0000,text-align:center;'>Please submit the form through POST method</p>";
                         } else if ($_GET['error'] == 2) {
                             echo "<P style='colour:#FF0000,text-align:center;'>Please submit the form through submit button</p>";
                         } else if ($_GET['error'] == 3) {
@@ -121,6 +110,7 @@
                         } else if ($_GET['error'] == 4) {
                             echo 'Please enter a valid email';
                         }
+                        
                     }
                     ?>
 
@@ -240,16 +230,14 @@
 
                         </div>
                     </div>
-                                                
+
                     <hr />
                     <div class="text-center my-4">
                         <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Create new Account
                         </button>
                     </div>
-                 </form>    
                 </div>
-                                                
 
             </div>
         </div>
@@ -258,7 +246,7 @@
         <footer class="footer-bs ">
             <div class="row ">
                 <div class="col-md-3 footer-brand animated fadeInLeft ">
-                    <img src="../images/logo.png" alt="logo " style="height:70px; width: 110px; ">
+                    <img src="../Images/logo.png" alt="logo " style="height:70px; width: 110px; ">
                     <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
                     <p>© 2007 ReadO, All rights reserved</p>
                 </div>

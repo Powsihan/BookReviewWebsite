@@ -2,7 +2,7 @@
     /* body css */
     
     body {
-        background: url("/images/home-background.png") center center / cover no-repeat fixed;
+        background: url("../images/home-background.png") center center / cover no-repeat fixed;
         content: "";
         position: absolute;
         top: 0;
@@ -185,6 +185,7 @@
         text-align: center;
         position: relative;
         box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        height: 520px;
     }
     
     .carousel .item .img-box {
@@ -218,6 +219,8 @@
     .carousel .thumb-content h4 {
         color: white;
         margin-top: 10px;
+        font-size: 14px;
+        font-weight: 800;
     }
     
     .carousel .thumb-content .revbtn {
